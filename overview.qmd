@@ -1,0 +1,3 @@
+# Overview {.unnumbered}
+
+Psychology 643 is the second course of a two-course sequence that serves to introduce psychology graduate students to statistics, research methodology, research design, and measurement from the vantage point of the general linear model. This course will further student knowledge in the General Linear Model to allow students to evaluate assumptions, deal with group comparisons, work with repeated measures, and address moderation and mediation.  The class meetings will consist mostly of lectures and discussions. The lab assignments will focus on providing you with hands-on experience analyzing data and interpreting results.

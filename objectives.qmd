@@ -1,0 +1,18 @@
+# Objectives {-}
+
+The purpose of the class remains focused on Bayesian statistics, however, unlike many Bayesian devotees, I consider Bayesian statistics a tool.  Just like other tools, Bayesian methods have suitable and unsuitable applications.  Students enrolled in my course may find my approach more challenging than standard graduate lectures because I emphasize mastery (i.e., learning) over achievement (i.e., grades).  I demand more from you (and me) so that we all learn together.  If this format is more difficult, why would I implement it?  Simple.  I want students to learn, not just get grades for taking a class.  The more my students learn, the more future professional opportunities await them.
+
+## Learning Objectives
+
+Let me...
+
+1.  **G**ain the ability to choose the appropriate analytic approach for a specific question
+2.  **U**nderstand the limitations of inference
+3.  **I**nterpret results accurately
+4.  **D**evelop a vocabulary that allows you to read and interpret the literature
+5.  **E**xpress uncertainty as a probability distribution
+6.  **U**nderstand the role of prior information in inference
+
+Get it?
+
+

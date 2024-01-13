@@ -1,0 +1,14 @@
+---
+title: "Instructional Resources"
+bibliography: references.bib
+---
+
+**OPTION 1:** For those who want the gentler version of the course, please use this text:
+
+@bayesian2018
+
+**OPTION 2:** For those who want the more technical version of the course, please use this text:
+
+@mcelreath2020
+
+The [course website](https://sites.google.com/view/gmupsyc757/home) contains tons of videos, links, and resources.

@@ -1,0 +1,70 @@
+project:
+  type: book
+
+book:
+  downloads: [pdf]
+  title: "An Introduction to Bayesian Statistics"
+  subtitle: "PSYC 757 - Section 002"
+  author: 
+    - name: Patrick E. McKnight
+      affiliation: 
+        - name: George Mason University
+          city: Fairfax
+          state: VA
+          url: https://psychology.gmu.edu/people/pmcknigh
+      orcid: 0000-0002-9067-9066
+      email: pmcknigh@gmu.edu
+    
+  date: last-modified
+  site-url: https://posit.cloud/content/7338888
+  repo-url: https://github.com/pem725/BayesianSyllabus_S2024
+  description: "Welcome to the course syllabus for Psychology (PSYC) 757 - An Introduction to Bayesian Statistics.  The course focuses introducing psychology graduate students to Bayesian statistics.  I designed the current incarnation from previous renditions to increase student involvement and adjust the workload to a manageable level.  Learning all the relevant pieces to the topic can be daunting to most graduate students.  I try to make this a gentle process that involves group work and shared workloads throughout the semester.  Further, after more than 20 years teaching graduate students, I learned that heaping tons of reading, programming, and new concepts into 15 weeks is a fool's errand.  Students simply do not do the work and, should we adopt Draconian measures to fail students who do not \"rise to the occasion,\" we end up failing ourselves and our field.  My goal with this class is to provide every student the opportunity to implement basic Bayesian methods to standard social/behavioral science data analysis problems."
+  page-navigation: true
+  chapters:
+    - index.qmd
+    - overview.qmd
+    - objectives.qmd
+    - workflow.qmd
+    - resources.qmd
+    - grading.qmd
+    - projects.qmd
+    - policies.qmd
+    - technology.qmd
+    - schedule.qmd
+    - week1.qmd
+
+bibliography: references.bib
+
+
+format:
+  html: 
+    theme: cyborg
+    number-sections: false
+  pdf: 
+    documentclass: scrreport
+    include-in-header:
+      text: |
+        \usepackage{makeidx}
+        \makeindex
+    include-after-body:
+      text: |
+        \printindex
+
+language:
+#   crossref-fig-title: "Graph"       # replaces "Figure"
+
+   crossref-thm-title: "Theorem"
+   crossref-lem-title: "Solution"    # replaces "Lemma"
+   crossref-cor-title: "Note"        # replaces "Corollary"
+   crossref-prp-title: "Procedure"   # replaces "Proposition"
+   crossref-cnj-title: "R Code"      # replaces "Conjecture"
+   crossref-def-title: "Definition"
+   crossref-exm-title: "Example"
+   crossref-exr-title: "Exercise"
+
+# https://github.com/quarto-dev/quarto-cli/blob/main/src/resources/language/_language.yml
+   callout-tip-title: "Tips & Tricks"         # green
+   callout-note-title: "Note"            # blue
+   callout-warning-title: "Watch out!"    # orange
+   callout-important-title: "Important"  # red
+   callout-caution-title: "Typo"         # yellow

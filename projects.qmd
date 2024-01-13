@@ -1,0 +1,16 @@
+---
+title: "Projects"
+bibliography: references.bib
+---
+
+I borrowed the idea of these projects from a published paper [@berg2021] suggesting that a reasonable pedagogical approach to teaching Bayesian statistics is to use practical examples. We deviate a bit from his suggested topics but the idea remains.
+
+## Project 1: Stein's Paradox
+
+First, you must read. I suggest you begin with Bradley Efron and Carl Morris' [@efron1977] excellent article in Scientific American. Another more detailed blog post [@antognini2021] provides depth - perhaps more than you want or need. Second, you need to start thinking about the problem. Look at this resource: @keil2018 and @clark2019 for some ideas about how to demonstrate the effect. We will tackle this problem with a variety of tools including (but not limited to) Python, R, Quarto, and Stan.
+
+## Project 2: Measurement Error
+
+Most of us think of measurement error as the result of a mistake (accident during data collection), omission (relevant variable, coherent model, range, etc.), or bias.  Some of us know better.  To capture the essence of what measurement error is (and is not), we shall undertake a deep dive into a simple measurement model.  The actual data source will be revealed in time but the data represent a simple instantiation of a common problem.  We have XXX unique participant data who completed a measure that was administered across 8 or 16 vignettes.  
+
+But, in fact, measurement error is a fundamental part of the process of measurement. We will explore this idea in the context of a simple linear regression model. We will use the same tools as in Project 1.

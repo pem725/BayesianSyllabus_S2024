@@ -1,0 +1,87 @@
+# Workflow
+
+## Initial Setup
+
+Follow each of the steps below.
+
+::: {.callout-note collapse="true" title="Install the Tools"}
+We will use R, RStudio, Python, Quarto, Git, and GitHub (Desktop if desired).  You need all six entities installed and configured to be functionally enrolled in this course.  Thus, we need to get you all setup before I can start distributing things like...this syllabus and my weekly notes.  So, let's get started.
+
+First, get R (aka our engine for this course).  Go to [CRAN](https://cran.r-project.org/) and download the latest version of R for your operating system.  Install R.  Then install RStudio.  Go to [RStudio](https://rstudio.com/products/rstudio/download/) and download the latest version of RStudio for your operating system.  Then, install RStudio.  <thank you copilot>  Once you have a functional RStudio environment, go to the [Quarto](https://quarto.org/) website and follow the instructions to install Quarto.  Finally, install Git.  Go to [Git](https://git-scm.com/downloads) and download the latest version of Git for your operating system.  Install Git.  If you want to use GitHub Desktop, go to [GitHub Desktop](https://desktop.github.com/) and download the latest version of GitHub Desktop for your operating system.  Install GitHub Desktop - again, optional.
+:::
+
+::: {.callout-note collapse="true" title="Get a GitHub account (and send to me)"}
+We will use GitHub to store all of our files, including the project reports.  Thus, you will need to get comfortable with GitHub.  I will help you with this process.
+
+Sign yourself up for a github account.  Once you get your username, please send it to me via email.  I will add you to the course organization and you will be able to access the course repository (a set of files stored on the cloud).  Once you have access to the course repository, you will be able to clone (copy) the repository to your computer.  You can even edit these files!  Thus, the addition of you to the group repository enables you to participate in the course.  Don't worry about using the tool right now, we will build in a routine for each day, week, and quarter(ish) to help you easily get into the flow of things.  GitHub allows us to work together in a more efficient manner - compared to Google docs, for example.  We will use GitHub to store all of our files, including the project reports.  Thus, you will need to get comfortable with GitHub.  Again, I will help you with this process.
+- Get your PAT setup.  See [this page](https://happygitwithr.com/https-pat) for more details.
+- Add your PAT to your credential manager.  See [this page](https://happygitwithr.com/https-pat#store-pat) for more details.
+- Test your setup.
+:::
+
+
+::: {.callout-note collapse="true" title="Clone the course repository"}
+This is the easiest part.  Once your system is setup and configured to use all the tools, you can now issue the following commands:
+
+```{r}
+# Clone the course repository
+install.packages("usethis")
+library(usethis)
+# usethis::use_course("pem725/
+
+```
+
+
+:::
+
+### Clone the course repository
+
+
+
+
+
+
+### Open RStudio and set up Git
+
+Once you have RStudio installed, open it.  Then, go to Tools > Global Options > Git/SVN.  Click on the box next to "Enable version control interface for RStudio projects".  Then, click on the box next to "Use Git from the Windows Command Prompt".  Then, click on the box next to "Use a custom Git executable" and navigate to the Git executable on your computer.  Finally, click on the box next to "View project status in the RStudio project".  Click "OK".  You are now ready to use Git with RStudio.
+
+If you want a more, in depth, tutorial on how to use Git with RStudio, go to [Happy Git and GitHub for the useR](https://happygitwithr.com/) and follow the instructions.  I highly recommend this outstanding resource for learning how to use Git with RStudio.
+
+### Clone this repository
+
+Yes, you gotta try sometime.  Use the following steps to clone this repository to your computer.
+
+1. Open RStudio
+2. Go to File > New Project > Version Control > Git
+3. Paste the following URL into the "Repository URL" box:
+
+
+  
+
+### Open the project in RStudio
+
+### Render the syllabus & read (often)
+
+## Daily (or every other day)
+
+1. Pull the latest changes from GitHub (5 mins max)
+2. Read the assigned readings (before Tuesday each week; 4 hours max/week)
+3. Write down your questions from the assigned readings
+3. Work on the weekly assignment (before Thursday each week; 4 hours max/week)
+4. Write down questions each time you read. These will be used for discussion.
+
+## Weekly
+
+1. Pull the latest changes from GitHub
+2. Render the syllabus & read updates (weekly notes)
+3. Work on the weekly assignment
+
+## Every 5 Weeks
+
+1. Check your assignments for the project
+2. Submit all contributions to GitHub
+3. Review GitHub project and compile **on your computer**
+4. Ensure project lead can render the final report
+5. Help finalize the document (do your job)
+6. Submit and celebrate!
+

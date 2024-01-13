@@ -1,0 +1,889 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.4.537">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="description" content="Welcome to the course syllabus for Psychology (PSYC) 757 - An Introduction to Bayesian Statistics. The course focuses introducing psychology graduate students to Bayesian statistics. I designed the current incarnation from previous renditions to increase student involvement and adjust the workload to a manageable level. Learning all the relevant pieces to the topic can be daunting to most graduate students. I try to make this a gentle process that involves group work and shared workloads throughout the semester. Further, after more than 20 years teaching graduate students, I learned that heaping tons of reading, programming, and new concepts into 15 weeks is a fool’s errand. Students simply do not do the work and, should we adopt Draconian measures to fail students who do not “rise to the occasion,” we end up failing ourselves and our field. My goal with this class is to provide every student the opportunity to implement basic Bayesian methods to standard social/behavioral science data analysis problems.">
+
+<title>An Introduction to Bayesian Statistics - Tentative Schedule</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./week1.html" rel="next">
+<link href="./technology.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./schedule.html"><span class="chapter-title">Tentative Schedule</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">An Introduction to Bayesian Statistics</a> 
+        <div class="sidebar-tools-main">
+    <a href="https://github.com/pem725/BayesianSyllabus_S2024" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+    <a href="./An-Introduction-to-Bayesian-Statistics.pdf" title="Download PDF" class="quarto-navigation-tool px-1" aria-label="Download PDF"><i class="bi bi-file-pdf"></i></a>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Welcome</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./overview.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Overview</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./objectives.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Objectives</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./workflow.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Workflow</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./resources.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Instructional Resources</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./grading.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Grading and Evaluation</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./projects.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Projects</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./policies.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Academic Policies</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./technology.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Technology Policies</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./schedule.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Tentative Schedule</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./week1.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Week 1</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-title">Tentative Schedule</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<table class="table">
+<colgroup>
+<col style="width: 6%">
+<col style="width: 7%">
+<col style="width: 7%">
+<col style="width: 29%">
+<col style="width: 18%">
+<col style="width: 19%">
+<col style="width: 7%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Project</th>
+<th>Wk</th>
+<th>Date</th>
+<th>Topic</th>
+<th>Reading</th>
+<th>Depth</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>1</td>
+<td>1/15</td>
+<td><p>Overview</p>
+<p>Probability Theory</p></td>
+<td><span class="citation" data-cites="kurt2019">Kurt (<a href="#ref-kurt2019" role="doc-biblioref">2019</a>)</span> c1-2</td>
+<td><span class="citation" data-cites="mcelreath2020">McElreath (<a href="#ref-mcelreath2020" role="doc-biblioref">2020</a>)</span> c1</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td>2</td>
+<td>1/22</td>
+<td></td>
+<td><span class="citation" data-cites="kurt2019">Kurt (<a href="#ref-kurt2019" role="doc-biblioref">2019</a>)</span></td>
+<td><span class="citation" data-cites="keppel2004">Keppel and Wickens (<a href="#ref-keppel2004" role="doc-biblioref">2004</a>)</span></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>1</td>
+<td>3</td>
+<td>1/29</td>
+<td>GLM Diagnostics &amp; Remediation</td>
+<td><span class="citation" data-cites="osborne2019">Osborne and Waters (<a href="#ref-osborne2019" role="doc-biblioref">2019</a>)</span></td>
+<td><span class="citation" data-cites="ernst2017">Ernst and Albers (<a href="#ref-ernst2017" role="doc-biblioref">2017</a>)</span></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td>4</td>
+<td>2/5</td>
+<td>Categorical Predictors (Dummy Coding)</td>
+<td><span class="citation" data-cites="alkharusi2012">Alkharusi (<a href="#ref-alkharusi2012" role="doc-biblioref">2012</a>)</span></td>
+<td><span class="citation" data-cites="aiken2002">Aiken (<a href="#ref-aiken2002" role="doc-biblioref">2002</a>)</span> chap.&nbsp;8</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>1</td>
+<td>5</td>
+<td>2/12</td>
+<td>Categorical Predictors (Effects Coding)</td>
+<td><span class="citation" data-cites="codings"><span>“Coding Systems for Categorical Variables in Regression Analysis”</span> (<a href="#ref-codings" role="doc-biblioref">n.d.</a>)</span></td>
+<td><span class="citation" data-cites="hayes2017">Hayes and Montoya (<a href="#ref-hayes2017" role="doc-biblioref">2017</a>)</span></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>6</td>
+<td>2/19</td>
+<td>Categorical Predictors (Contrast Coding)</td>
+<td><span class="citation" data-cites="davis2022">Davis (<a href="#ref-davis2022" role="doc-biblioref">2022</a>)</span></td>
+<td><span class="citation" data-cites="schad2020">Schad et al. (<a href="#ref-schad2020" role="doc-biblioref">2020</a>)</span></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>2</td>
+<td>7</td>
+<td>2/26</td>
+<td>Repeated &amp; Post-Hoc Tests</td>
+<td><span class="citation" data-cites="rubin2017">Rubin (<a href="#ref-rubin2017" role="doc-biblioref">2017</a>)</span></td>
+<td><span class="citation" data-cites="maxwell1980">S. E. Maxwell (<a href="#ref-maxwell1980" role="doc-biblioref">1980</a>)</span> <span class="citation" data-cites="murayama2014">Murayama, Pekrun, and Fiedler (<a href="#ref-murayama2014" role="doc-biblioref">2014</a>)</span></td>
+<td></td>
+</tr>
+<tr class="even">
+<td></td>
+<td>8</td>
+<td>3/4</td>
+<td><strong>SPRING BREAK!!</strong></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>2</td>
+<td>9</td>
+<td>3/11</td>
+<td>Statistical Control</td>
+<td><span class="citation" data-cites="miller2001">Miller and Chapman (<a href="#ref-miller2001" role="doc-biblioref">2001</a>)</span> <span class="citation" data-cites="maxwell1985">S. E. Maxwell, Delaney, and Manheimer (<a href="#ref-maxwell1985" role="doc-biblioref">1985</a>)</span></td>
+<td><span class="citation" data-cites="frank2000">FRANK (<a href="#ref-frank2000" role="doc-biblioref">2000</a>)</span> <span class="citation" data-cites="westfall2016">Westfall and Yarkoni (<a href="#ref-westfall2016" role="doc-biblioref">2016</a>)</span></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>10</td>
+<td>3/18</td>
+<td>Moderation - ANOVA</td>
+<td><span class="citation" data-cites="baron1986">Baron and Kenny (<a href="#ref-baron1986" role="doc-biblioref">1986</a>)</span></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>11</td>
+<td>3/25</td>
+<td>Moderation - MRC</td>
+<td><span class="citation" data-cites="maxwell1993">S. Maxwell and Delaney (<a href="#ref-maxwell1993" role="doc-biblioref">1993</a>)</span></td>
+<td><span class="citation" data-cites="spiller2013">Spiller et al. (<a href="#ref-spiller2013" role="doc-biblioref">2013</a>)</span></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>3</td>
+<td>12</td>
+<td>4/1</td>
+<td>Repeated Measures</td>
+<td><span class="citation" data-cites="maxwell1980">S. E. Maxwell (<a href="#ref-maxwell1980" role="doc-biblioref">1980</a>)</span></td>
+<td><span class="citation" data-cites="finnstats2021">finnstats (<a href="#ref-finnstats2021" role="doc-biblioref">2021</a>)</span></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>13</td>
+<td>4/8</td>
+<td>Mediation</td>
+<td><span class="citation" data-cites="mackinnon2007">MacKinnon, Fairchild, and Fritz (<a href="#ref-mackinnon2007" role="doc-biblioref">2007</a>)</span></td>
+<td><span class="citation" data-cites="tofighi2011">Tofighi and MacKinnon (<a href="#ref-tofighi2011" role="doc-biblioref">2011</a>)</span> <span class="citation" data-cites="fiedler2011">Fiedler, Schott, and Meiser (<a href="#ref-fiedler2011" role="doc-biblioref">2011</a>)</span></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>3</td>
+<td>14</td>
+<td>4/15</td>
+<td>Categorical Outcomes (non-paremetrics)</td>
+<td><span class="citation" data-cites="pampel2021">Pampel (<a href="#ref-pampel2021" role="doc-biblioref">2021</a>)</span></td>
+<td><span class="citation" data-cites="peng2002">Peng, Lee, and Ingersoll (<a href="#ref-peng2002" role="doc-biblioref">2002</a>)</span></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>15</td>
+<td>4/22</td>
+<td>Miscellaneous Outcomes</td>
+<td><span class="citation" data-cites="barros2003">Barros and Hirakata (<a href="#ref-barros2003" role="doc-biblioref">2003</a>)</span></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td></td>
+<td></td>
+<td>4/29</td>
+<td><strong>LAST DAY of Classes</strong></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-aiken2002" class="csl-entry" role="listitem">
+Aiken, Jacob Cohen, Patricia Cohen, Stephen G. West, Leona S. 2002. <em>Applied Multiple Regression/Correlation Analysis for the Behavioral Sciences</em>. 3rd ed. New York: Routledge. <a href="https://doi.org/10.4324/9780203774441">https://doi.org/10.4324/9780203774441</a>.
+</div>
+<div id="ref-alkharusi2012" class="csl-entry" role="listitem">
+Alkharusi, Hussain. 2012. <span>“Categorical Variables in Regression Analysis: A Comparison of Dummy and Effect Coding.”</span> <em>International Journal of Education</em> 4 (April): 202–10. <a href="https://doi.org/10.5296/ije.v4i2.1962">https://doi.org/10.5296/ije.v4i2.1962</a>.
+</div>
+<div id="ref-baron1986" class="csl-entry" role="listitem">
+Baron, Reuben M., and David A. Kenny. 1986. <span>“The Moderator<span></span>mediator Variable Distinction in Social Psychological Research: Conceptual, Strategic, and Statistical Considerations.”</span> <em>Journal of Personality and Social Psychology</em> 51 (6): 1173.
+</div>
+<div id="ref-barros2003" class="csl-entry" role="listitem">
+Barros, Aluísio JD, and Vânia N. Hirakata. 2003. <span>“Alternatives for Logistic Regression in Cross-Sectional Studies: An Empirical Comparison of Models That Directly Estimate the Prevalence Ratio.”</span> <em>BMC Medical Research Methodology</em> 3 (1): 21. <a href="https://doi.org/10.1186/1471-2288-3-21">https://doi.org/10.1186/1471-2288-3-21</a>.
+</div>
+<div id="ref-codings" class="csl-entry" role="listitem">
+<span>“Coding Systems for Categorical Variables in Regression Analysis.”</span> n.d. <a href="https://stats.oarc.ucla.edu/spss/faq/coding-systems-for-categorical-variables-in-regression-analysis/">https://stats.oarc.ucla.edu/spss/faq/coding-systems-for-categorical-variables-in-regression-analysis/</a>.
+</div>
+<div id="ref-davis2022" class="csl-entry" role="listitem">
+Davis, Matthew J. 2022. <span>“Contrast Coding in Multiple Regression Analysis: Strengths, Weaknesses, and Utility of Popular Coding Structures.”</span> <em>Journal of Data Science</em> 8 (1): 61–73. <a href="https://doi.org/10.6339/JDS.2010.08(1).563">https://doi.org/10.6339/JDS.2010.08(1).563</a>.
+</div>
+<div id="ref-ernst2017" class="csl-entry" role="listitem">
+Ernst, Anja F., and Casper J. Albers. 2017. <span>“Regression Assumptions in Clinical Psychology Research Practice<span></span>a Systematic Review of Common Misconceptions.”</span> <em>PeerJ</em> 5 (May): e3323. <a href="https://doi.org/10.7717/peerj.3323">https://doi.org/10.7717/peerj.3323</a>.
+</div>
+<div id="ref-fiedler2011" class="csl-entry" role="listitem">
+Fiedler, Klaus, Malte Schott, and Thorsten Meiser. 2011. <span>“What Mediation Analysis Can (Not) Do.”</span> <em>Journal of Experimental Social Psychology</em> 47 (6): 1231–36. <a href="https://doi.org/10.1016/j.jesp.2011.05.007">https://doi.org/10.1016/j.jesp.2011.05.007</a>.
+</div>
+<div id="ref-finnstats2021" class="csl-entry" role="listitem">
+finnstats. 2021. <span>“Repeated Measures of ANOVA in r Complete Tutorial » Finnstats.”</span> <a href="https://finnstats.com/2021/04/06/repeated-measures-of-anova-in-r/">https://finnstats.com/2021/04/06/repeated-measures-of-anova-in-r/</a>.
+</div>
+<div id="ref-frank2000" class="csl-entry" role="listitem">
+FRANK, KENNETH A. 2000. <span>“Impact of a Confounding Variable on a Regression Coefficient.”</span> <em>Sociological Methods &amp; Research</em> 29 (2): 147–94. <a href="https://doi.org/10.1177/0049124100029002001">https://doi.org/10.1177/0049124100029002001</a>.
+</div>
+<div id="ref-hayes2017" class="csl-entry" role="listitem">
+Hayes, Andrew F., and Amanda K. Montoya. 2017. <span>“A Tutorial on Testing, Visualizing, and Probing an Interaction Involving a Multicategorical Variable in Linear Regression Analysis.”</span> <em>Communication Methods and Measures</em> 11 (1): 1–30. <a href="https://doi.org/10.1080/19312458.2016.1271116">https://doi.org/10.1080/19312458.2016.1271116</a>.
+</div>
+<div id="ref-keppel2004" class="csl-entry" role="listitem">
+Keppel, Geoffrey, and Thomas D. Wickens. 2004. <em>Design and Analysis: A Researcher’s Handbook</em>. Upper Saddle River, N.J: Pearson Prentice Hall.
+</div>
+<div id="ref-kurt2019" class="csl-entry" role="listitem">
+Kurt, Will. 2019. <em>Bayesian Statistics the Fun Way: Understanding Statistics and Probability with Star Wars, Lego, and Rubber Ducks</em>. No Starch Press.
+</div>
+<div id="ref-mackinnon2007" class="csl-entry" role="listitem">
+MacKinnon, David P., Amanda J. Fairchild, and Matthew S. Fritz. 2007. <span>“Mediation Analysis.”</span> <em>Annual Review of Psychology</em> 58 (1): 593–614. <a href="https://doi.org/10.1146/annurev.psych.58.110405.085542">https://doi.org/10.1146/annurev.psych.58.110405.085542</a>.
+</div>
+<div id="ref-maxwell1980" class="csl-entry" role="listitem">
+Maxwell, Scott E. 1980. <span>“Pairwise Multiple Comparisons in Repeated Measures Designs.”</span> <em>Journal of Educational Statistics</em> 5 (3): 269–87. <a href="https://doi.org/10.3102/10769986005003269">https://doi.org/10.3102/10769986005003269</a>.
+</div>
+<div id="ref-maxwell1985" class="csl-entry" role="listitem">
+Maxwell, Scott E., Harold D. Delaney, and Jerry M. Manheimer. 1985. <span>“Anova of Residuals and Ancova: Correcting an Illusion by Using Model Comparisons and Graphs.”</span> <em>Journal of Educational Statistics</em> 10 (3): 197–209. <a href="https://doi.org/10.3102/10769986010003197">https://doi.org/10.3102/10769986010003197</a>.
+</div>
+<div id="ref-maxwell1993" class="csl-entry" role="listitem">
+Maxwell, Scott, and Harold Delaney. 1993. <span>“Bivariate Median Splits and Spurious Statistical Significance.”</span> <em>Psychological Bulletin</em> 113 (January): 181–90. <a href="https://doi.org/10.1037/0033-2909.113.1.181">https://doi.org/10.1037/0033-2909.113.1.181</a>.
+</div>
+<div id="ref-mcelreath2020" class="csl-entry" role="listitem">
+McElreath, Richard. 2020. <em>Statistical Rethinking: A Bayesian Course with Examples in R and STAN</em>. 2nd ed. Routledge. <a href="https://www.routledge.com/Statistical-Rethinking-A-Bayesian-Course-with-Examples-in-R-and-STAN/McElreath/p/book/9780367139919">https://www.routledge.com/Statistical-Rethinking-A-Bayesian-Course-with-Examples-in-R-and-STAN/McElreath/p/book/9780367139919</a>.
+</div>
+<div id="ref-miller2001" class="csl-entry" role="listitem">
+Miller, G. A., and J. P. Chapman. 2001. <span>“Misunderstanding analysis of covariance.”</span> <em>Journal of Abnormal Psychology</em> 110 (1): 40–48. <a href="https://doi.org/10.1037//0021-843x.110.1.40">https://doi.org/10.1037//0021-843x.110.1.40</a>.
+</div>
+<div id="ref-murayama2014" class="csl-entry" role="listitem">
+Murayama, Kou, Reinhard Pekrun, and Klaus Fiedler. 2014. <span>“Research Practices That Can Prevent an Inflation of False-Positive Rates.”</span> <em>Personality and Social Psychology Review</em> 18 (2): 107–18. <a href="https://doi.org/10.1177/1088868313496330">https://doi.org/10.1177/1088868313496330</a>.
+</div>
+<div id="ref-osborne2019" class="csl-entry" role="listitem">
+Osborne, Jason W., and Elaine Waters. 2019. <span>“Four assumptions of multiple regression that researchers should always test.”</span> <em>Practical Assessment, Research, and Evaluation</em> 8 (1). <a href="https://doi.org/10.7275/r222-hv23">https://doi.org/10.7275/r222-hv23</a>.
+</div>
+<div id="ref-pampel2021" class="csl-entry" role="listitem">
+Pampel, Fred C. 2021. <em>Logistic Regression: A Primer</em>. SAGE Publications, Inc. <a href="https://doi.org/10.4135/9781071878729">https://doi.org/10.4135/9781071878729</a>.
+</div>
+<div id="ref-peng2002" class="csl-entry" role="listitem">
+Peng, Chao-Ying Joanne, Kuk Lida Lee, and Gary M. Ingersoll. 2002. <span>“An Introduction to Logistic Regression Analysis and Reporting.”</span> <em>The Journal of Educational Research</em> 96 (1): 3–14. <a href="https://www.jstor.org/stable/27542407">https://www.jstor.org/stable/27542407</a>.
+</div>
+<div id="ref-rubin2017" class="csl-entry" role="listitem">
+Rubin, Mark. 2017. <span>“Do p Values Lose Their Meaning in Exploratory Analyses? It Depends How You Define the Familywise Error Rate.”</span> <em>Review of General Psychology</em> 21 (3): 269–75. <a href="https://doi.org/10.1037/gpr0000123">https://doi.org/10.1037/gpr0000123</a>.
+</div>
+<div id="ref-schad2020" class="csl-entry" role="listitem">
+Schad, Daniel J., Shravan Vasishth, Sven Hohenstein, and Reinhold Kliegl. 2020. <span>“How to Capitalize on a Priori Contrasts in Linear (Mixed) Models: A Tutorial.”</span> <em>Journal of Memory and Language</em> 110 (February): 104038. <a href="https://doi.org/10.1016/j.jml.2019.104038">https://doi.org/10.1016/j.jml.2019.104038</a>.
+</div>
+<div id="ref-spiller2013" class="csl-entry" role="listitem">
+Spiller, Stephen A., Gavan J. Fitzsimons, John G. Lynch, and Gary H. Mcclelland. 2013. <span>“Spotlights, Floodlights, and the Magic Number Zero: Simple Effects Tests in Moderated Regression.”</span> <em>Journal of Marketing Research</em> 50 (2): 277–88. <a href="https://doi.org/10.1509/jmr.12.0420">https://doi.org/10.1509/jmr.12.0420</a>.
+</div>
+<div id="ref-tofighi2011" class="csl-entry" role="listitem">
+Tofighi, Davood, and David P. MacKinnon. 2011. <span>“RMediation: An R Package for Mediation Analysis Confidence Intervals.”</span> <em>Behavior Research Methods</em> 43 (3): 692–700. <a href="https://doi.org/10.3758/s13428-011-0076-x">https://doi.org/10.3758/s13428-011-0076-x</a>.
+</div>
+<div id="ref-westfall2016" class="csl-entry" role="listitem">
+Westfall, Jacob, and Tal Yarkoni. 2016. <span>“Statistically Controlling for Confounding Constructs Is Harder Than You Think.”</span> <em>PLOS ONE</em> 11 (3): e0152719. <a href="https://doi.org/10.1371/journal.pone.0152719">https://doi.org/10.1371/journal.pone.0152719</a>.
+</div>
+</div>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      return note.innerHTML;
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./technology.html" class="pagination-link  aria-label=" &lt;span="" policies&lt;="" span&gt;"="">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Technology Policies</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./week1.html" class="pagination-link" aria-label="<span class='chapter-number'>8</span>&nbsp; <span class='chapter-title'>Week 1</span>">
+        <span class="nav-page-text"><span class="chapter-title">Week 1</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

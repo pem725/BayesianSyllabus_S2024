@@ -1,0 +1,23 @@
+---
+title: "Grading and Evaluation"
+---
+
+## COURSE REQUIREMENTS
+
+Bayesian statistics requires you to learn many things but not all of you begin the course at the same stage of learning.  Thus, I plan to create a collaborative learning environment that mimics the real world.  We will all be part of a team and our job is to complete three projects.  You will be assigned tasks to complete each week.  Everyone will have a different task.  The projects will be graded and the grades will be based on the quality of the work and the timeliness of the work.
+
+### Attendance (50\%)
+
+Yes, attend.  You cannot learn if you do not attend the class sessions.  Woody Allen once famously said "80% of success is showing up."  So why not make success your goal and show up.  I offer you half of your grade is predicated on your attendance.  Each day, I intend to take a picture of the participants at 9:10a.  Please make every effort to attend and attend on time.  Thank you.
+
+### Active Participation (25\%)
+
+Yes, participate.  You cannot learn if you do not participate in the discussions and activities.  So, given that you plan to attend, you might as well participate.  I do intend to call on those who do not contribute often.  We need to make this course more interactive.  Please come prepared to talk about the material in the assigned readings.
+
+### Assignments (25\%)
+
+Each of you will have assigned duties for each project.  The projects require you to work in one large group (entire class including me).  Your responsibility is to complete the tasks you were assigned.  If they are too burdensome at any point, it is **your** responsibility to communicate with the team.  If you do not complete your tasks, you will not receive credit for the assignment and, as a result, the project will not be completed on time so the entire team suffers.  Thus, do your assigned task.  All task assignments will be publicly made and recorded in the github repository.
+
+## GRADING
+
+Final grades will be assigned according to the following percentages: \> 93% = A, 90 – 92% = A-, 87 – 89% = B+, 83 – 86% = B, 80 – 82% = B-, 70 – 79% = C, 60 – 69% = D, \< 60% = F Note: A grade of C or lower denotes an unsatisfactory level of achievement for a graduate student.

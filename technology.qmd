@@ -1,0 +1,28 @@
+---
+title: "Technology Policies"
+editor: visual
+---
+
+## Official Communications via GMU E-mail
+
+Students must use their GMU email account to receive important University information, including communications related to this class. I will not respond to messages sent from or send messages to a non-Mason email address.
+
+## Class cancellation policy
+
+Classes may be canceled by either the University or the Instructor (via email).  In the event of a canceled class, the instructor will either switch to an online class modality, try to make up the material during other meetings of the class, or provide a supplementary assignment/video.
+
+## Course Materials
+
+Activities and assignments in this course will be made available to students through a learning management system (such as Blackboard) or other websites.   Students are required to have regular, reliable access to a computer with an updated operating system and a stable Internet connection suitable for online meetings, streaming videos, completing assignments, etc.
+
+## Online Meetings
+
+Although we are planning on having the class in person, things can change.  In the event we need to pivot to an online class, then activities and assignments in this course will use Zoom. In addition to the requirements above, students are required to have a device with a functional microphone and camera. 
+
+## Course Materials and Student Privacy
+
+All course materials posted to Blackboard or other course site are private to this class; by federal law, any materials that identity specific students (via their name, voice, or image) must not be shared with anyone not enrolled in this class. Video recordings – whether made by instructors or students – of class meetings that include audio, visual, or textual information from other students are private and must not be shared outside the class. Live video conference meetings (e.g., Zoom) that include audio, textual, or visual information from other students must be viewed privately and not shared with others in your household or recorded and shared outside the class. 
+
+## Statistical Packages
+
+You will need to use a statistical package of **your choice** to complete assignments in this course; most students use SPSS or R. Students can access to SPSS through the online Citrix Computer Lab. R and R Studio are also available for free, direct download.

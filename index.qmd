@@ -1,0 +1,22 @@
+# Welcome {.unnumbered}
+
+::: {.callout-note title="Course Location & Time" icon=false}
+**George Mason University**\
+Fairfax campus\
+Planetary Hall, Room 127\
+Tues/Thurs 9-10:15am
+:::
+
+Thank you for your interest in quantitative methods. We hope you enjoy the course.
+
+Sincerely,
+
+Patrick E. McKnight, Ph.D.\
+
+::: {.callout-tip title="Professor" icon=false}
+**Patrick E. McKnight** 
+Office: DK2064/65\
+Email: pmcknigh\@gmu.edu\
+Office Hours: Tues/Thurs 10-noon (online)\
+[![Patrick's GMU faculty page](GMU_PLogo_4CP.png){width="8%"}](https://psychology.gmu.edu/people/pmcknigh) [![Patrick's personal page](https://d101vc9winf8ln.cloudfront.net/person_images/921/cropped/20130820_123617.jpg?1519905333){width="8%"}](https://www.patrickmcknight.com)[![MRES](MRESlogoV2AM.png){width="8%"}](https://www.mres-gmu.org)
+:::
