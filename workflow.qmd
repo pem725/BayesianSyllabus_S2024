@@ -1,22 +1,32 @@
+---
+bibliography: references.bib
+---
+
 # Workflow
 
 ## Initial Setup
 
-Follow each of the steps below.
+Follow each of the steps below when you begin the course OR when you want to either setup another computer or you replace the one you began the course using.  Either way, these steps are universal.  Follow them in order to avoid any issues.
 
-::: {.callout-note collapse="true" title="Install the Tools"}
+::: {.callout-note collapse="true" title="STEP 1: Install the Tools"}
 We will use R, RStudio, Python, Quarto, Git, and GitHub (Desktop if desired). You need all six entities installed and configured to be functionally enrolled in this course. Thus, we need to get you all setup before I can start distributing things like...this syllabus and my weekly notes. So, let's get started.
 
 First, get R (aka our engine for this course). Go to [CRAN](https://cran.r-project.org/) and download the latest version of R for your operating system. Install R. Then install RStudio. Go to [RStudio](https://rstudio.com/products/rstudio/download/) and download the latest version of RStudio for your operating system. Then, install RStudio. <thank you copilot> Once you have a functional RStudio environment, go to the [Quarto](https://quarto.org/) website and follow the instructions to install Quarto. Finally, install Git. Go to [Git](https://git-scm.com/downloads) and download the latest version of Git for your operating system. Install Git. If you want to use GitHub Desktop, go to [GitHub Desktop](https://desktop.github.com/) and download the latest version of GitHub Desktop for your operating system. Install GitHub Desktop - again, optional.
 :::
 
-::: {.callout-note collapse="true" title="Get a GitHub account (and send to me)"}
+::: {.callout-note collapse="true" title="STEP 2: Get a GitHub account (and send to me)"}
 We will use GitHub to store all of our files, including the project reports. Thus, you will need to get comfortable with GitHub. I will help you with this process.
 
 Sign yourself up for a github account. Once you get your username, please send it to me via email. I will add you to the course organization and you will be able to access the course repository (a set of files stored on the cloud). Once you have access to the course repository, you will be able to clone (copy) the repository to your computer. You can even edit these files! Thus, the addition of you to the group repository enables you to participate in the course. Don't worry about using the tool right now, we will build in a routine for each day, week, and quarter(ish) to help you easily get into the flow of things. GitHub allows us to work together in a more efficient manner - compared to Google docs, for example. We will use GitHub to store all of our files, including the project reports. Thus, you will need to get comfortable with GitHub. Again, I will help you with this process. - Get your PAT setup. See [this page](https://happygitwithr.com/https-pat) for more details. - Add your PAT to your credential manager. See [this page](https://happygitwithr.com/https-pat#store-pat) for more details. - Test your setup.
 :::
 
-::: {.callout-note collapse="true" title="Clone the course repository"}
+::: {.callout-note collapse="true" title="STEP 3: Open RStudio and set up Git"}
+Once you have RStudio installed, open it. Then, go to Tools \> Global Options \> Git/SVN. Click on the box next to "Enable version control interface for RStudio projects". **Windows Users** (Then, click on the box next to "Use Git from the Windows Command Prompt", click on the box next to "Use a custom Git executable" and navigate to the Git executable on your computer). **Mac/Linux Users** select the git executable that RStudio found in your path. If there is no executable, go back and install git. Finally, for all users, click on the box next to "View project status in the RStudio project". Click "OK". You are now ready to use Git with RStudio.
+
+If you want a more, in depth, tutorial on how to use Git with RStudio, go to [Happy Git and GitHub for the useR](https://happygitwithr.com/) and follow the instructions. I highly recommend this outstanding resource for learning how to use Git with RStudio.
+:::
+
+::: {.callout-note collapse="true" title="STEP 4: Clone the course repository"}
 This is the easiest part. Once your system is setup and configured to use all the tools, you can now issue the following commands:
 
 ```{r eval=FALSE, echo=TRUE, }
@@ -27,45 +37,47 @@ usethis::use_course("pem725/BayesianSyllabus_S2024")
 ```
 :::
 
-### Clone the course repository
-
-### Open RStudio and set up Git
-
-Once you have RStudio installed, open it. Then, go to Tools \> Global Options \> Git/SVN. Click on the box next to "Enable version control interface for RStudio projects". Then, click on the box next to "Use Git from the Windows Command Prompt". Then, click on the box next to "Use a custom Git executable" and navigate to the Git executable on your computer. Finally, click on the box next to "View project status in the RStudio project". Click "OK". You are now ready to use Git with RStudio.
-
-If you want a more, in depth, tutorial on how to use Git with RStudio, go to [Happy Git and GitHub for the useR](https://happygitwithr.com/) and follow the instructions. I highly recommend this outstanding resource for learning how to use Git with RStudio.
-
-### Clone this repository
-
-Yes, you gotta try sometime. Use the following steps to clone this repository to your computer.
-
-1.  Open RStudio
-2.  Go to File \> New Project \> Version Control \> Git
-3.  Paste the following URL into the "Repository URL" box:
-
-### Open the project in RStudio
-
-### Render the syllabus & read (often)
+::: {.callout-note collapse="true" title="STEP 5: Render the syllabus & read (often)"}
+Open ANY of the qmd files - probably index.qmd is the most logical choice. Then, click on the "Render" button that will create a wonderful document to your right. If you click on the button that says "Show in new window", you will have a lovely full-screen version of this beauty. Throughout the semester, I will update this book. Simply do a fresh pull with the same code in the same directory and you will have the most up-to-date version of the syllabus and notes. The $usethis$ [@usethis] package is quite handy.
+:::
 
 ## Daily (or every other day)
 
-1.  Pull the latest changes from GitHub (5 mins max)
-2.  Read the assigned readings (before Tuesday each week; 4 hours max/week)
-3.  Write down your questions from the assigned readings
-4.  Work on the weekly assignment (before Thursday each week; 4 hours max/week)
-5.  Write down questions each time you read. These will be used for discussion.
+::: {.callout-important title="Pull the latest changes from GitHub (5 mins max)"}
+Open RStudio and open the course syllabus repository (STEP 4 above). Then, click on the "Pull" button in the Git tab; doing so will refresh your local files and enable you to render the full set of notes. You will need to do this **before** you start working on the weekly assignment.
+:::
 
-## Weekly
+::: {.callout-tip title="Read the assigned readings (before Tuesday each week; 4 hours max/week)"}
+Yep, read the assigned readings BEFORE class. Remember, you get to choose. I have two books. One is a light read with great examples [@kurt2019]; the other is a bit dense with tons of code [@mcelreath2020]. Either one suffices for the course. If you have a keen interest in applying these tools to your own work, I strongly recommend the latter. You choose. But please read.
+:::
 
-1.  Pull the latest changes from GitHub
-2.  Render the syllabus & read updates (weekly notes)
-3.  Work on the weekly assignment
+::: {.callout-note title="Write down your questions from the assigned readings"}
+As you read, note any questions you have regarding terminology, concepts, or applications. These questions will be used for discussion during our Tuesday sessions.  Your questions will also help me address any issues you may have with the material. I will do my best to answer your questions in a timely manner. If I cannot answer your question, I will find someone who can. I will also use your questions to help me improve the course. Thus, your questions are important. Please write them down and ask them during class.
+:::
 
-## Every 5 Weeks
+::: {.callout-note title="Work on the weekly assignment (before Thursday each week; 4 hours max/week)"}
+Open up RStudio every day and get accustomed to the workflow.  There is a lot you learn simply by repetition.  So, lather, rinse, repeat.  You can do it.  These initial workflow steps are ones that translate to every area of your life.  Break things down into repeatable chunks, commit them to a memorable sequence, and stick to it.  You will be amazed at what you can accomplish.
+:::
 
-1.  Check your assignments for the project
-2.  Submit all contributions to GitHub
-3.  Review GitHub project and compile **on your computer**
-4.  Ensure project lead can render the final report
-5.  Help finalize the document (do your job)
-6.  Submit and celebrate!
+## Every 5 Weeks (Once per Project)
+
+::: {.callout-note title="Check your assignments for the project"}
+Via GitHub, each of you will receive a set of tasks to accomplish so that we - together - address the project aims and objectives.  You will be assigned a task and a deadline.  Please do your best to meet the deadline.  If you cannot, please let the team know as soon as possible.  The team is all of us.  I will do my best to accommodate reasonable needs.  But, please, do not wait until the last minute to let me know you cannot meet the deadline.  The team will suffer and I will not be happy.  And, you will not be happy.  So, let's be happy.  Communicate early and often.
+:::
+
+::: {.callout-note title="Submit all contributions to GitHub"}
+Once you have completed your assigned task, submit your work to GitHub.  In fact, once you finish every update to the project, submit the work via a push on GitHub.  Don't worry.  If you make a mistake, we can easily fix it.  Think of this as a "track changes" edit to the group project file.  I will review your work, accept as necessary, and provide feedback.  If you have questions, please ask.  If you have concerns, please voice.  If you have suggestions, please suggest.  Thank you.
+:::
+
+::: {.callout-note title="Review GitHub project and compile **on your computer**"}
+Once you have submitted your work, review the GitHub project and compile the document on your computer.  Doing this final step ensures that every member of the team can render the document.  Rendering the document also means that everyone has their respective computer setup and configured appropriately, can use these tools, and has the wherewithall to navigate the text and code for a group project on Bayesian statistics.  
+:::
+
+::: {.callout-note title="Ensure project lead can render the final report"}
+Check with the project lead.  Report any problems right away.  The team's success depends upon each of us.  Do your part.  Be ready to help.  Be ready to learn.  Be ready to teach.  Be ready to lead.  Be ready to follow.
+:::
+
+::: {.callout-note title="Submit and celebrate!"}
+The final project will be a group effort.  We will collectively review the final project and rate our product.  Our ratings will NOT be relevant to the course grades.  The product may be limited for reasons beyond our control.  What we can control is our effort.  We will do our best.  We will learn.  We will grow.  We will celebrate.  We will be happy.
+:::
+
