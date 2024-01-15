@@ -4,8 +4,16 @@ Three points for this week
 
 1.  Course Overview
 2.  Learning Objectives (G.U.I.D.E. U.)
-3.  Probability theory
+3.  Setup your rigs NOW!
+4.  Probability theory
 
 ## Course Overview
 
-Review the syllabus.
+```{mermaid}
+flowchart TB
+    A[Introductions] --> B[Course Overview]
+    B --> C[Readings] & D[Assignments] & E[Participation] --> F[Learning Objectives]
+    F --> G[Personal Responsibilities]
+    G --> H[Setup your rigs NOW!]
+    H --> I[Probability Theory]
+```

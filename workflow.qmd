@@ -43,19 +43,19 @@ Open ANY of the qmd files - probably index.qmd is the most logical choice. Then,
 
 ## Daily (or every other day)
 
-::: {.callout-important title="Pull the latest changes from GitHub (5 mins max)"}
+::: {.callout-important title="MUST DO: Pull the latest changes from GitHub (5 mins max)"}
 Open RStudio and open the course syllabus repository (STEP 4 above). Then, click on the "Pull" button in the Git tab; doing so will refresh your local files and enable you to render the full set of notes. You will need to do this **before** you start working on the weekly assignment.
 :::
 
-::: {.callout-tip title="Read the assigned readings (before Tuesday each week; 4 hours max/week)"}
+::: {.callout-tip title="PLEASE: Read the assigned readings (before Tuesday each week; 4 hours max/week)"}
 Yep, read the assigned readings BEFORE class. Remember, you get to choose. I have two books. One is a light read with great examples [@kurt2019]; the other is a bit dense with tons of code [@mcelreath2020]. Either one suffices for the course. If you have a keen interest in applying these tools to your own work, I strongly recommend the latter. You choose. But please read.
 :::
 
-::: {.callout-note title="Write down your questions from the assigned readings"}
+::: {.callout-note title="NOTE: Write down your questions from the assigned readings"}
 As you read, note any questions you have regarding terminology, concepts, or applications. These questions will be used for discussion during our Tuesday sessions.  Your questions will also help me address any issues you may have with the material. I will do my best to answer your questions in a timely manner. If I cannot answer your question, I will find someone who can. I will also use your questions to help me improve the course. Thus, your questions are important. Please write them down and ask them during class.
 :::
 
-::: {.callout-note title="Work on the weekly assignment (before Thursday each week; 4 hours max/week)"}
+::: {.callout-note title="NOTE: Work on the weekly assignment (before Thursday each week; 4 hours max/week)"}
 Open up RStudio every day and get accustomed to the workflow.  There is a lot you learn simply by repetition.  So, lather, rinse, repeat.  You can do it.  These initial workflow steps are ones that translate to every area of your life.  Break things down into repeatable chunks, commit them to a memorable sequence, and stick to it.  You will be amazed at what you can accomplish.
 :::
 

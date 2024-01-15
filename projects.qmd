@@ -3,18 +3,36 @@ title: "Projects"
 bibliography: references.bib
 ---
 
-I borrowed the idea of these projects from a published paper [@berg2021] suggesting that a reasonable pedagogical approach to teaching Bayesian statistics is to use practical examples. We deviate a bit from his suggested topics but the idea remains.
+Every year, I try to introduce something new into this course.  Bayesian methods and tools change so rapidly that if I didn't change every semester, my students would never benefit.  So, things change.  Times change.  And, I change.  This semester, I am introducing a new approach to the course.  I am going to ask you to do three projects as a single team (or multiple if the class size is sufficiently large).  Each project will be a bit different but they will all have a common theme: **Bayesian Statistics**.  I will provide some guidance and some resources but you will be responsible for the bulk of the work.  My responsibility is to provide some structure and some scaffolding but you will be responsible for work product.  Also, I intend to provide some feedback and suggestions to get the team unstuck.
 
-## Project 1: Stein's Paradox
+## The Three Projects Plan
+
+I borrowed the idea of these projects from a published paper [@berg2021] suggesting that a reasonable pedagogical approach to teaching Bayesian statistics is to use practical examples. We deviate a bit from his suggested topics but the idea remains.  What the heck!  Let's try it.  We have 3 projects.  All of us will work together.  Each of you will contribute what you can given your current skills.
+
+## The Projects
+
+### Project 1: Stein's Paradox
 
 First, you must read. I suggest you begin with Bradley Efron and Carl Morris' [@efron1977] excellent article in Scientific American. Another more detailed blog post [@antognini2021] provides depth - perhaps more than you want or need. Second, you need to start thinking about the problem. Look at this resource: @keil2018 and @clark2019 for some ideas about how to demonstrate the effect. We will tackle this problem with a variety of tools including (but not limited to) Python, R, Quarto, and Stan.
 
 ::: {.callout-tip title="Project 1 Aims"}
-Find, create, simulate, or imagine (and then simulate) a dataset that has repeated measures for at least three people. Compute the gain in accuracy and precision from using a shrunken estimator in predicting future scores.
+Find, create, simulate, or imagine (and then simulate) a dataset that has repeated measures for at least three people. Compute the gain in accuracy and precision from using a shrunken estimator in predicting future scores.  We will use a variety of tools to accomplish this task but most importantly, we will use RStudio, R/Python, and GitHub.  The aim is to learn how to apply a quantitative solution (tools) to a fundamental probability problem.  The tools are secondary but essential to you all learning core problems that face us as Bayesians.  You will need to learn some new tools.  I will provide some guidance but you will need to do some work on your own.  Everyone will need to code something.
 :::
 
-## Project 2: Measurement Error
+### Project 2: Measurement Error
 
-Most of us think of measurement error as the result of a mistake (accident during data collection), omission (relevant variable, coherent model, range, etc.), or bias. Some of us know better. To capture the essence of what measurement error is (and is not), we shall undertake a deep dive into a simple measurement model. The actual data source will be revealed in time but the data represent a simple instantiation of a common problem. We have XXX unique participant data who completed a measure that was administered across 8 or 16 vignettes.
+Most of us think of measurement error as the result of a mistake (accident during data collection), omission (relevant variable, coherent model, range, etc.), or bias. Some of us know better. To capture the essence of what measurement error is (and is not), we shall undertake a deep dive into a simple measurement model. The actual data source will be revealed in time but the data represent a simple example of a common problem. We have over 200 unique participant's data on multiple items administered across 8 occasions.  Our job is to estimate the reliability and validity of the scores produced by the measurement model.  We will explore these psychometric properties by linear models. These terms will be familiar enough now but you will need to understand them in a new way.  Project 2 tools include those from the prior project but will branch out to include shiny apps, RMarkdown, and Stan.
 
-But, in fact, measurement error is a fundamental part of the process of measurement. We will explore this idea in the context of a simple linear regression model. We will use the same tools as in Project 1.
+::: {.callout-tip title="Project 2 Aims"}
+Analyze an existing data set to assess reliability and validity estimates.  Our primary aim is to understand variance in all aspects of the measurement process.  The tools required for this project are pretty advanced; I strongly encourage you to start using R/Python and Stan as soon as possible.  I will provide some guidance but you will need to do some work on your own.  Everyone will need to code something.
+:::
+
+### Project 3: Replicate a Published Study (or a portion of it)
+
+The idea of replication is now embedded in our social science.  My intent here is to involve you all in the reanalysis of an existing study.  Instead, of simply replicating the published analyses, we will replicate the analysis using Bayesian methods.  Furthermore, we will extend the analysis to include any and all relevant bits we learned throughout the semester.  We will select the study to replicate as a class.  Stay tuned for updates on the project details.
+
+
+::: {.callout-tip title="Project 3 Aims"}
+1.  Apply Bayesian methods to published study that used frequentist methods.
+2. Extend the analysis to include any and all relevant bits we learned throughout the semester.
+:::
