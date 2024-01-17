@@ -1,0 +1,8 @@
+```{mermaid}
+flowchart TB
+    A[Introductions] --> B[Course Overview]
+    B --> C[Readings] & D[Assignments] & E[Participation] --> F[Learning Objectives]
+    F --> G[Personal Responsibilities]
+    G --> H[Setup your rigs NOW!]
+    H --> I[Probability Theory]
+```

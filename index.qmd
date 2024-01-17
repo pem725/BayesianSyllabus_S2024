@@ -18,5 +18,5 @@ Patrick E. McKnight, Ph.D.\
 Office: DK2064/65\
 Email: pmcknigh\@gmu.edu\
 Office Hours: Tues/Thurs 10-noon (online)\
-[![Patrick's GMU faculty page](GMU_PLogo_4CP.png){width="8%"}](https://psychology.gmu.edu/people/pmcknigh) [![Patrick's personal page](https://d101vc9winf8ln.cloudfront.net/person_images/921/cropped/20130820_123617.jpg?1519905333){width="8%"}](https://www.patrickmcknight.com)[![MRES](MRESlogoV2AM.png){width="8%"}](https://www.mres-gmu.org)
+[![Patrick's GMU faculty page](GMU_PLogo_4CP.png){width="12%"}](https://psychology.gmu.edu/people/pmcknigh) [![Patrick's personal page](https://d101vc9winf8ln.cloudfront.net/person_images/921/cropped/20130820_123617.jpg?1519905333){width="12%"}](https://www.patrickmcknight.com)[![MRES](MRESlogoV2AM.png){width="12%"}](https://www.mres-gmu.org)
 :::

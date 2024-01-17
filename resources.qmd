@@ -28,3 +28,11 @@ There are resources available for the book, including [code](https://github.com/
 ## Course website
 
 The [course website](https://sites.google.com/view/gmupsyc757/home) contains tons of videos, links, and resources for the course.  Slowly, I am transitioning away from Google Sites and towards this website and GitHub in general.  Most of the links will be ported over here to the syllabus.  The course website will remain active for the foreseeable future.  Do use it.
+
+## References
+
+::: {#refs}
+
+:::
+
+

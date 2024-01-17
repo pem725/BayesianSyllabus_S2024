@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://posit.cloud/content/7338888/index.html</loc>
-    <lastmod>2024-01-13T11:18:14.426Z</lastmod>
+    <loc>https://posit.cloud/content/7338888/resources.html</loc>
+    <lastmod>2024-01-15T20:48:26.344Z</lastmod>
   </url>
   <url>
     <loc>https://posit.cloud/content/7338888/overview.html</loc>
@@ -15,10 +15,6 @@
   <url>
     <loc>https://posit.cloud/content/7338888/workflow.html</loc>
     <lastmod>2024-01-14T11:15:07.564Z</lastmod>
-  </url>
-  <url>
-    <loc>https://posit.cloud/content/7338888/resources.html</loc>
-    <lastmod>2024-01-14T14:04:45.584Z</lastmod>
   </url>
   <url>
     <loc>https://posit.cloud/content/7338888/grading.html</loc>
@@ -42,10 +38,10 @@
   </url>
   <url>
     <loc>https://posit.cloud/content/7338888/week1.html</loc>
-    <lastmod>2024-01-15T03:09:55.443Z</lastmod>
+    <lastmod>2024-01-17T01:25:34.905Z</lastmod>
   </url>
   <url>
-    <loc>https://posit.cloud/content/7338888/An-Introduction-to-Bayesian-Statistics.pdf</loc>
-    <lastmod>2024-01-14T10:47:59.700Z</lastmod>
+    <loc>https://posit.cloud/content/7338888/index.html</loc>
+    <lastmod>2024-01-15T20:53:21.731Z</lastmod>
   </url>
 </urlset>

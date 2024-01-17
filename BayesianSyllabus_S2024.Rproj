@@ -11,3 +11,9 @@ Encoding: UTF-8
 
 RnwWeave: knitr
 LaTeX: pdfLaTeX
+
+BuildType: Website
+
+PythonType: system
+PythonVersion: 3.10.12
+PythonPath: /usr/bin/python3.10
