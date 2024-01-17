@@ -314,7 +314,7 @@
     "href": "week1.html",
     "title": "Week 1",
     "section": "",
-    "text": "Course Overview",
+    "text": "Course Overview\nflowchart TB\n    A[Introductions] --&gt; B[Course Overview]\n    B --&gt; C[Readings] & D[Assignments] & E[Participation] --&gt; F[Learning Objectives]\n    F --&gt; G[Personal Responsibilities]\n    G --&gt; H[Setup your rigs NOW!]\n    H --&gt; I[Probability Theory]",
     "crumbs": [
       "<span class='chapter-number'>8</span>  <span class='chapter-title'>Week 1</span>"
     ]
