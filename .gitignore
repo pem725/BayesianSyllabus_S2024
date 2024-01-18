@@ -4,3 +4,6 @@
 .Ruserdata
 /.quarto/
 .Rproj
+./_book
+./_book/**
+_book
