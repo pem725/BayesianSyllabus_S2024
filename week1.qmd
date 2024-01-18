@@ -1,11 +1,10 @@
-# Week 1 {#week-1}
+# Week 1 {#week1}
 
 Three points for this week
 
-1.  Course Overview
-2.  Learning Objectives (G.U.I.D.E. U.)
-3.  Setup your rigs NOW!
-4.  Probability theory
+1.  Course Overview with @sec-learning-objectives
+2.  Setup your rigs NOW!
+3.  Probability theory (light introduction)
 
 ## Course Overview
 
@@ -18,6 +17,45 @@ flowchart TB
     H --> I[Probability Theory]
 ```
 
-## Learning Objectives
+### Setup the Toolstack
 
-Here we will discuss the GUIDEU framework for learning objectives.
+Go through the following steps to setup your toolstack on your computer. You may need to do this multiple times throughout the semester so I have this fixed as part of a workflow. Each node below has the relevant links to get you started on the path toward a working toolstack. Save this document and use it as a checklist to make sure you have everything you need to be successful in this course. So, check these out in sequence. Make sure every piece of software is **the most up-to-date version**. If you have any questions, please ask them during class.
+
+```{mermaid}
+flowchart TB
+  A[Install R] --> B[Install RStudio]
+  B --> C[Install Git]
+  C --> D[Sign up for GitHub]
+  D --> E[Run RStudio]
+  E --> F[Install key R Packages]
+  F --> G{Copilot?}
+  G --> |YES| H[Enroll in GitHub copilot]
+  H --> I[Configure copilot in RStudio]
+  F & I --> |NO| J[Start New Project]
+  click A "https://cran.r-project.org/"
+  click B "https://rstudio.com/products/rstudio/download/"
+  click C "https://git-scm.com/downloads"
+  click D "https://github.com"
+  click E "https://education.rstudio.com/learn/beginner/"
+  click F "https://moderndive.netlify.app/1-getting-started.html"
+  click G "https://copilot.github.com/"
+  click H "https://copilot.github.com/"
+  click I "https://docs.posit.co/ide/user/ide/guide/tools/copilot.html"
+  click J "https://education.rstudio.com/learn/beginner/"
+```
+
+### Probability Theory
+
+We will be using probability theory throughout the course. You should be familiar with the following concepts:
+
+1.  Probability
+-   How is it defined, calcuated, and interpreted?
+-   What are the axioms, properties, rules, and laws of probability?
+-   What are the different types of probability?
+-   What are the different types of probability distributions?
+2.  Random Variables
+3.  Expectation
+4.  Variance, Covariance, and Correlation
+5.  Central Limit Theorem
+6.  Law of Large Numbers
+
