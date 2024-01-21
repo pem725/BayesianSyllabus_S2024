@@ -165,5 +165,7 @@ These shapes define our problem space.  Each probability density function has me
 
 ### Interesting Probability Problems (for those chomping at the bit)
 
+See Fred Mosteller's outstanding book: 
+
 3.  Bayes' Theorem
 4.  The Beta Distribution
