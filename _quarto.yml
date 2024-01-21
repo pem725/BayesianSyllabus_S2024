@@ -32,6 +32,7 @@ book:
     - technology.qmd
     - schedule.qmd
     - week1.qmd
+    - week2.qmd
 
 bibliography: references.bib
 
@@ -40,6 +41,8 @@ format:
   html: 
     theme: cyborg
     number-sections: false
+    code-fold: true
+    code-summary: "Show the code"
   pdf: 
     documentclass: scrreport
     include-in-header:

@@ -1,3 +1,169 @@
 # Week 2
 
+If you are seeing this page, you successfully rendered the syllabus and week 1 notes. Congratulations! Now, we have work to do. This week, we will be learning about the following topics:
 
+## Some Administration Details
+
+### Maintaining your Rig
+
+1.  [Maintain Quarto (hardest due to almost daily updates)](https://github.com/rocker-org/rocker-versioned2/blob/master/scripts/install_quarto.sh "Use this script")
+2.  Maintain RStudio (relatively easy, weekly updates)
+3.  Maintain R (easy, quarterly updates)
+
+```{r version-check, eval=FALSE, echo=T, message=FALSE, warning=FALSE, collapse=T}
+library(jsonlite)
+
+if (Sys.which("wget") != "") {
+  print("You have wget.  Getting Quarto version.")
+  download.file("https://quarto.org/docs/download/_download.json", 
+                destfile ="tmp.json", method="wget")
+  quartoRC <- fromJSON("tmp.json")
+  quartoRC$version
+  download.file("https://quarto.org/docs/download/_prerelease.json", 
+                destfile ="tmp2.json", method="wget")
+  quartoPRE <- fromJSON("tmp2.json")
+  quartoPRE$version
+} else {
+  print("Sorry, no wget or curl.  Please check Quarto versions manually.")
+}
+
+```
+
+::: {#wk2versions .callout-important title="Latest Versions"}
+Check Rstudio version and R version EVERY week. As of today (`r date()`), the versions are:
+
+| Software         | Latest Version |
+|------------------|----------------|
+| R                | 4.3.2          |
+| RStudio          | 2023-12.0-369  |
+| Quarto (current) | 1.3.450        |
+| Quarto RC        | 1.4.547        |
+
+: Latest and Greatest (Stable) Versions
+:::
+
+## Why Bayesian Statistics?
+
+The world according to the frequentist (or by xkcd):
+
+[![Which are you?](https://imgs.xkcd.com/comics/frequentists_vs_bayesians.png){fig-align="center"}](https://xkcd.com/1132)
+
+[Not the best illustration](https://stats.stackexchange.com/questions/43339/whats-wrong-with-xkcds-frequentists-vs-bayesians-comic "Read on McDuff!")
+
+[A better illustration requires some explanation (pages 9-22)](https://faculty.washington.edu/kenrice/BayesIntroClassEpi2018.pdf "See Pages 9-onward")
+
+### A probability problem
+
+A frequentist gets a p-value from a statistical procedure. That p-value represents the following probability:
+
+$$p-value_{freq} = P(D | H_0) $$
+
+where $P()$ stands for probability of the stuff inside the parentheses, $D$ stands for the data (or results) and $H_0$ is the null hypothesis (i.e., there are no results worth talking about because the null is zero). The pipe "$|$" is the sign for "given" and separates the focal interest (the results) from the conditions. Thus, the p-value is a conditional probability but for something we generally do not wish to check. Instead, we scientists are interested in hypothesis testing. Why? Because we want to actually assess the probability our hypothesis is true given the results we obtained. We even think that way with frequentist statistics. Unfortunately, the frequentist's p-value does not tell us what we want to know.
+
+### A hypothesis testing problem
+
+So, we have a problem with our probabilities. We want to know the probability of the hypothesis given the data or:
+
+$$p-value_{new} = P(H|D)$$
+
+where now we have the same elements but they are switched. Instead of obtaining the conditional probability of the data given the hypothesis, we get the conditional probability of the hypothesis given the data. Whats more, we get the probability of *our* or rather *any* hypothesis given the data; we no longer get restricted to the null hypothesis. Getting that probability is the goal of Bayesian statistics. We will learn how to do that in this course.
+
+## The Bayesian Solution
+
+Bayes' Theorem is our solution to the problem here and is defined as follows:
+
+$$p-value_{Bayes} = P(H|D) = \frac{P(D|H)P(H)}{P(D)}$$
+
+where $P(H|D)$ is the probability of the hypothesis given the data, $P(D|H)$ is the probability of the data given the hypothesis, $P(H)$ is the probability of the hypothesis, and $P(D)$ is the probability of the data. The denominator is the probability of the data and is calculated as follows:
+
+$$P(D) = \sum_{i=1}^{n} P(D|H_i)P(H_i)$$
+
+where $n$ is the number of hypotheses. This is the probability of the data given any hypothesis times the probability of that hypothesis. The sum of these products is the probability of the data. We will learn how to calculate this probability in this course.
+
+## Distributions
+
+These conditional probabilities are not point estimates as is often viewed by users (not experts) of frequentist statistics. Nope, the $P(H|D)$ is not a point estimate. Instead, we Bayesians think of the probability not as a single value but rather as a distribution of possible values. That distribution of possible values needs to be learned via direct exposure to data and distributions - both from a real data and a theoretical perspective. These distributions communicate a lot more information than single values. We will learn about distributions in this course because that knowledge will help you model the world that you wish to study. We will learn about the following distributions:
+
+### The Normal Distribution
+
+You think you know the normal distribution because that is what you learned in all your statistics classes to date. Well, you do know the normal distribution but you do not know it well enough. How do I know this? Well, I don't; I am using my prior experiences with graduate students to "color" my perceptions of this forecast. So, I am acting like a Bayesian here. What is it that you are missing? You are missing the details.
+
+```{r, echo=T, message=FALSE, warning=FALSE, collapse=T}
+
+# The Normal Distribution
+library(tidyverse)
+library(extrafont)
+library(ggplot2)
+library(xkcd)
+df <- tibble(x = seq(-4, 4, length.out = 100), y = dnorm(x, mean = 0, sd = 1))
+p1 <- ggplot(df, aes(x = x, y = y)) + geom_line() + labs(x = "Some arbitrary variable x (Standardized)", y = "Density of variable y", title = "The Standard Normal Distribution")
+
+if( 'xkcd' %in% fonts()) {
+  p1 + theme_xkcd()
+} else {
+  warning("No xkcd fonts installed!")
+  library(extrafont)
+  download.file("http://simonsoftware.se/other/xkcd.ttf", dest="xkcd.ttf", mode="wb")
+  system("mkdir ~/.fonts")
+  system("cp xkcd.ttf ~/.fonts")
+  font_import(pattern="[X/x]kcd", prompt=FALSE)
+  fonts()
+  fonttable()
+  if(.Patform$OS.type != "unix") {
+    # register fonts for windows bmp output
+    loadfonts(device = "win")
+  } else {
+    loadfonts()
+  }
+  p1 + theme_xkcd()
+}
+
+```
+
+The density plot above tells us a fair bit. But you need to understand how we go from a curve like that one to probabilities.
+
+::: callout-note
+During class on Tuesday, I intend to annotate the figure above. Those annotations can be easily redone via ggplot. If you care to learn how, ask in class.
+:::
+
+## The Beta Distribution
+
+The normal distribution, while "normal" in the sense that it is quite normative in social and behavioral sciences, it is quite abnormal with respect to complexity. Compared to other distributions, the normal distribution is extremely complicated with respect to the innards (i.e., maths). A simpler, gentler, and more mathematically tractable for us arithmetically challenged, I present to you the beta distribution.
+
+```{r}
+# The Beta Distribution
+library(tidyverse)
+library(extrafont)
+library(ggplot2)
+df <- tibble(x = seq(0, 1, length.out = 100), y = dbeta(x, shape1 = .5, shape2 = .5))
+p1 <- ggplot(df, aes(x = x, y = y)) + geom_line() + labs(x = "A range of probabilities", y = "Probability of said probability", title = "The Standard Beta Distribution")
+p1 + theme_xkcd()
+```
+
+Change the shape1 and shape2 parameters in the code above and see what happens to the overall shape of the distribution.  Here are a few values to try:
+
+
+
+
+The Beta distribution is a probability distribution that we will use to model probabilities - at least initially. It is a continuous distribution that is defined on the interval $[0,1]$ and by two parameters, $\alpha$ and $\beta$. For those math geeks among us, you can represent the function as:
+
+$$Beta(\alpha, \beta) = \frac{\Gamma(\alpha + \beta)}{\Gamma(\alpha)\Gamma(\beta)}x^{\alpha - 1}(1-x)^{\beta - 1}$$
+
+where $\Gamma()$ is the gamma function, $x$ is the probability, and $\alpha$ and $\beta$ are the parameters. Furthermore, (more math stuffs here), the gamma function I referred to above is defined as:
+
+$$\Gamma(x) = \int_{0}^{\infty} t^{x-1}e^{-t}dt$$
+
+where $x$ is the parameter. The gamma function is a generalization of the factorial function. The factorial function is defined as follows:
+
+$$n! = n(n-1)(n-2)\cdots(2)(1)$$
+
+where $n$ is the parameter. The gamma function is a generalization of the factorial function because it allows for non-integer values of $x$.
+
+### Why do you need to know this?
+
+These shapes define our problem space.  Each probability density function has meaning to us as an area to explore.  We will learn how to apply these functions to a variety of problems in our own areas of inquiry.
+
+### Interesting Probability Problems (for those chomping at the bit)
+
+3.  Bayes' Theorem
+4.  The Beta Distribution
