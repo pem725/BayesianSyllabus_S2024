@@ -140,10 +140,15 @@ p1 <- ggplot(df, aes(x = x, y = y)) + geom_line() + labs(x = "A range of probabi
 p1 + theme_xkcd()
 ```
 
-Change the shape1 and shape2 parameters in the code above and see what happens to the overall shape of the distribution.  Here are a few values to try:
+Change the shape1 and shape2 parameters in the code above and see what happens to the overall shape of the distribution. Here are a few values to try:
 
+-   shape1 = 1, shape2 = 1
+-   shape1 = 2, shape2 = 2
+-   shape1 = 2, shape2 = 5
+-   shape1 = 5, shape2 = 2
+-   shape1 = 5, shape2 = 5
 
-
+What happens?
 
 The Beta distribution is a probability distribution that we will use to model probabilities - at least initially. It is a continuous distribution that is defined on the interval $[0,1]$ and by two parameters, $\alpha$ and $\beta$. For those math geeks among us, you can represent the function as:
 
@@ -161,11 +166,114 @@ where $n$ is the parameter. The gamma function is a generalization of the factor
 
 ### Why do you need to know this?
 
-These shapes define our problem space.  Each probability density function has meaning to us as an area to explore.  We will learn how to apply these functions to a variety of problems in our own areas of inquiry.
+These shapes define our problem space. Each probability density function has meaning to us as an area to explore. We will learn how to apply these functions to a variety of problems in our own areas of inquiry.
 
 ### Interesting Probability Problems (for those chomping at the bit)
 
-See Fred Mosteller's outstanding book: 
+See Fred Mosteller's outstanding book: Fifty Challenging Problems in Probability with Solutions. It is a great book and will help you think about probability in a different way. Don't stress it though. The book is a resource for those who want to challenge their thinking about fundamental probability problems; it is not required reading for this course.
 
-3.  Bayes' Theorem
-4.  The Beta Distribution
+## Basic Probability
+
+Probability came from gambling. People wanted to win or at least increase their chances of winning. The study of probability was born out of this desire. The study of probability is the study of chance and chance favors the prepared mind. We will prepare our minds by learning the basics of probability.
+
+A probability is a number between 0 and 1. A probability of 0 means that the event will never occur. A probability of 1 means that the event will always occur. We calculate said value by a simple fraction.
+
+$$
+probability = \frac{number\ of\ outcomes\ an\ event\ can\ occur}{total\ number\ of\ possible\ outcomes}
+$$
+
+Most of us think of probability as a percentage. We can convert a probability to a percentage by multiplying the probability by 100. For example, the probability of rolling a 1 on a six-sided die is 1/6 or 0.1667. If we multiply 0.1667 by 100, we get 16.67%. Thus, we can estimate these probabilities as percentages and vice versa; regardless, we interpret them the same.
+
+### Probability and Odds
+
+[![](http://www.phdcomics.com/comics/archive/phd1105.gif){fig-align="center"}](https://phdcomics.com/comics/archive.php?comicid=8)
+
+You will frequently see probabilities listed in two (perhaps even more) forms - as probabilities or odds ratios.  First, the probability.  Since we know that probabilities range between 0 and 1, we know that there must be a fraction of sorts.  Probabilities are simple fractions of the form:
+
+$$
+probability = \frac{part}{whole} = \frac{part}{part + not\ part}
+$$
+Second, we have odds ratios.  Odds ratios are also fractions, but they have different values.  Odds ratios are of the form:
+
+$$
+odds\ ratio = \frac{part}{not\ part}
+$$
+
+The difference between the two is that the denominator of the odds ratio is not the whole but rather the complement of the part we wish to estimate the probability.  These ratios can be a bit confusing, but it is important to understand the difference between the two.  The odds ratio is a ratio of the part to the not part.  The probability is a ratio of the part to the whole.  The two are related, but they are not the same.  Most of what we talk about in this course focuses on probabilities, but you will see odds ratios in the literature.  It is important to understand the difference between the two.
+
+### Some Rules to "Live" by (or at least to help you understand probability)
+
+1.  Range Rule: $0 \leq P(A) \leq 1$ where P(A) is the probability of event A.
+
+    ::: callout-warning
+    Ever see one of these?
+
+    p \< 0.000\*\*\*
+
+    Well, you have. They don't make sense either. Rounding error.
+    :::
+
+2.  Complement Rule (aka Law of Total Probability): $P(A) + P(A^c) = 1$ (Note: $A^c$ means the complement of A.)
+
+    ::: callout-warning
+    An event and all other non-events must add up to 1. This complement rule is a rule that puts a ton of power into your hands without you knowing it. Beware though! The complement $P(A^c)$ is not always readily available.
+    :::
+
+3.  Addition Rule: $P(A \cup B) = P(A) + P(B) - P(A \cap B)$ (Note: $A \cup B$ means the union of A and B. $A \cap B$ means the intersection of A and B.)
+
+4.  Multiplication Rule: $P(A \cap B) = P(A)P(B|A)$ (Note: $P(B|A)$ means the probability of B given A.)
+
+5.  Independence Rule: $P(A\ and\ B) = P(A \cap B) = P(A)P(B)$ (Note: A and B are independent if the probability of A is not affected by the probability of B and vice versa.)
+
+[![](https://imgs.xkcd.com/comics/prediction.png){fig-align="center"}(https://xkcd.com/2370)
+
+6.  Conditional Probability Rule: $P(A\ given\ B) = P(A|B) = \frac{P(A \cap B)}{P(B)}$ (Note: $P(A|B)$ means the probability of A given B.)
+
+[![](https://imgs.xkcd.com/comics/seashell.png){fig-align="center"}](https://xkcd.com/1236)
+
+### Some Examples
+
+1.  What is the probability of rolling a 1 on a six-sided die?
+
+    $$
+    P(1) = \frac{1}{6} = 0.1667
+    $$
+
+2.  What is the probability of rolling a 1 or a 2 on a six-sided die?
+
+    $$
+    P(1\ or\ 2) = \frac{2}{6} = 0.3333
+    $$
+    ::: callout-info
+    Note: The word "or" is a signal to add probabilities.
+    :::
+    
+3.  What is the probability that you will roll a combined total of 7 on two six-sided dice?
+
+    $$
+    P(7) = \frac{6}{36} = 0.1667
+    $$
+    ::: callout-info
+    Note: The word "and" is a signal to multiply probabilities.
+    :::
+    
+4.  What is the probability that you will roll a 1 on the first die and a 2 on the second die?
+
+    $$
+    P(1\ and\ 2) = \frac{1}{36} = 0.0278
+    $$
+    ::: callout-info
+    Note: The word "and" is a signal to multiply probabilities.
+    :::
+    
+5.  What is the probability that you will roll a 1 on the first die given that you rolled a 2 on the second die?
+
+    $$
+    P(1\ given\ 2) = \frac{1}{6} = 0.1667
+    $$
+    ::: callout-info
+    Note: The word "given" is a signal to use conditional probability.
+    :::
+    
+
+    
