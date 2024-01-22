@@ -219,7 +219,7 @@ The difference between the two is that the denominator of the odds ratio is not 
     An event and all other non-events must add up to 1. This complement rule is a rule that puts a ton of power into your hands without you knowing it. Beware though! The complement $P(A^c)$ is not always readily available.
     :::
 
-3.  Addition Rule: $P(A \cup B) = P(A) + P(B) - P(A \cap B)$ (Note: $A \cup B$ means the union of A and B. $A \cap B$ means the intersection of A and B.)
+3.  Addition Rule: $P(A\ or\ B) = P(A \cup B) = P(A) + P(B) - P(A \cap B)$ (Note: $P(A \cup B)$ means the probability of A or B.)
 
 4.  Multiplication Rule: $P(A \cap B) = P(A)P(B|A)$ (Note: $P(B|A)$ means the probability of B given A.)
 
