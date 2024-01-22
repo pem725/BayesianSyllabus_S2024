@@ -219,9 +219,17 @@ The difference between the two is that the denominator of the odds ratio is not 
     An event and all other non-events must add up to 1. This complement rule is a rule that puts a ton of power into your hands without you knowing it. Beware though! The complement $P(A^c)$ is not always readily available.
     :::
 
-3.  Addition Rule: $P(A\ or\ B) = P(A \cup B) = P(A) + P(B) - P(A \cap B)$ (Note: $P(A \cup B)$ means the probability of A or B.)
+3.  Addition Rule: $P(A\ or\ B) = P(A \cup B) = P(A) + P(B) - P(A \cap B)$ (Note: $P(A \cup B)$ means the probability of A or B.)  When two events are mutually exclusive, the probability of both events occurring is 0.  Thus, the addition rule becomes:
 
-4.  Multiplication Rule: $P(A \cap B) = P(A)P(B|A)$ (Note: $P(B|A)$ means the probability of B given A.)
+    $$P(A\ or\ B) = P(A \cup B) = P(A) + P(B)$$
+
+4.  Multiplication Rule: $P(A\ and\ B) = P(A \cap B) = P(A)P(B|A)$ (Note: $P(B|A)$ means the probability of B given A.)  When two events are **independent**, the probability of both events occurring is the product of the probabilities of each event occurring.  Thus, the multiplication rule becomes:
+
+    $$P(A\ and\ B) = P(A \cap B) = P(A)P(B)$$
+
+When two events are **mutually exclusive**, the probability of both events occurring is 0.  Thus, the multiplication rule becomes:
+
+$$P(A\ and\ B) = P(A \cap B) = P(A)P(B) = 0$$
 
 5.  Independence Rule: $P(A\ and\ B) = P(A \cap B) = P(A)P(B)$ (Note: A and B are independent if the probability of A is not affected by the probability of B and vice versa.)
 
