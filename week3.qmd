@@ -1,4 +1,12 @@
 # Week 3
 
+Today, we hand out assignments for the group project.  I received GitHub user names from most of you; if you failed to send me one, send it NOW.  Thank you.
 
+## The group project
+
+Each of you will be responsible for an aspect of this project.  We all work on the same project with the same goal in mind - to demonstrate empirically Stein's Paradox.  
+
+### The problem
+
+We have a situation that is paradoxical.  The adage in most sciences is "the best predictor of the present/future is the past."  There are many instances where this adage gets violated.  War is one of them.  With war, the best predictor of what is to come will certainly NOT be what happened in the past.  I suppose we could say the same thing for NFL games.  
 
