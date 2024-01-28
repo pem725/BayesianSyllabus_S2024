@@ -1,12 +1,72 @@
-# Week 3
+---
+title: "Week 3"
+format: html
+server: shiny
+---
 
-Today, we hand out assignments for the group project.  I received GitHub user names from most of you; if you failed to send me one, send it NOW.  Thank you.
+Today, we hand out assignments for the group project and provide some context to the process.  I received GitHub user names from most of you; if you failed to send me one, send it NOW (4 invites sent out as of Sunday, Jan 28th 2024 at 5am).  Thank you.
 
-## The group project
+## The Group Project
 
 Each of you will be responsible for an aspect of this project.  We all work on the same project with the same goal in mind - to demonstrate empirically Stein's Paradox.  
 
-### The problem
+### The Problem
 
-We have a situation that is paradoxical.  The adage in most sciences is "the best predictor of the present/future is the past."  There are many instances where this adage gets violated.  War is one of them.  With war, the best predictor of what is to come will certainly NOT be what happened in the past.  I suppose we could say the same thing for NFL games.  
+We have a situation that is paradoxical.  The adage in most sciences is "the best predictor of the present/future is the past."  There are many instances where this adage gets violated.  War is one of them.  With war, the best predictor of what is to come will certainly NOT be what happened in the past unless you find the infinite universe of possibilities reduced by a few to be comforting.  I suppose we could say the same thing for NFL games.  
+
+### The Solution(s)
+
+The paradox is that there is a way to combine the past with the present to make a better prediction than either the past or the present alone.  This is Stein's Paradox.  It is a paradox because it is counter-intuitive.  It is also a paradox because it is not true for all situations.  It is only true for a certain class of problems.  The class of problems for which it is true is called "normal means."  The class of problems for which it is not true is called "normal variance."  We will be working with the normal means class of problems.
+
+### The Process
+
+1. Pull latest changes from the repository.
+2. Read the Readme.md file for any updates pertinent to you.
+3. Work on your file and your file only.  You may look at all the other files but push your changes to your files only.
+4. When you are done editing (and often), commit, and push your changes to the repository.
+
+### The Files
+
+1. Located at: https://github.com/pem725/PSYC757S24-Project1 (add .git to end when creating a new project in RStudio)
+2. Setup project in RStudio saved on your LOCAL computer (NOTE: not on a server or in the cloud)
+3. README.md - this file.  It contains the instructions for the project and will be updated for the next few weeks.
+4. Your file (lastname.qmd) - this is your file.  You will be responsible for this file and all its contents
+
+### The Timeline
+
+1. Week 3 - hand out assignments
+2. Week 4 - work on your file
+3. Week 5 - combine and present
+
+### The Final Product
+
+Present to ourselves on Thursday of Week 5.
+
+## The Beta Distribution
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+library(shiny)
+sliderInput("a","Hits",min=0,max=100,value=.5, animate=TRUE)
+sliderInput("b","Misses",min=0,max=100,value=.5, animate=F)
+sliderInput("ncp","Non-centrality Parameter (ncp)",min=0,max=100,value=0, animate = F)
+plotOutput("myPlot")
+```
+
+```{r}
+#| echo: FALSE
+#| message: FALSE
+#| warning: FALSE
+#| context: server
+library(tidyverse)
+output$myPlot <- renderPlot({
+  ggplot() + 
+    stat_function(fun=dbeta, args=list(shape1=as.numeric(input$a),
+                                       shape2=as.numeric(input$b),
+                                       ncp=as.numeric(input$ncp))) +
+    xlim(0,1) +
+    ylim(0,10)
+})
+```
+
+
 
