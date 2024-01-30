@@ -96,27 +96,31 @@ library(extrafont)
 library(ggplot2)
 library(xkcd)
 df <- tibble(x = seq(-4, 4, length.out = 100), y = dnorm(x, mean = 0, sd = 1))
-p1 <- ggplot(df, aes(x = x, y = y)) + geom_line() + labs(x = "Some arbitrary variable x (Standardized)", y = "Density of variable y", title = "The Standard Normal Distribution")
+ggplot(df, aes(x = x, y = y)) + 
+  geom_line() + 
+  labs(x = "Some arbitrary variable x (Standardized)", 
+       y = "Density of variable y", 
+       title = "The Standard Normal Distribution")
 
-if( 'xkcd' %in% fonts()) {
-  p1 + theme_xkcd()
-} else {
-  warning("No xkcd fonts installed!")
-  library(extrafont)
-  download.file("http://simonsoftware.se/other/xkcd.ttf", dest="xkcd.ttf", mode="wb")
-  system("mkdir ~/.fonts")
-  system("cp xkcd.ttf ~/.fonts")
-  font_import(pattern="[X/x]kcd", prompt=FALSE)
-  fonts()
-  fonttable()
-  if(.Patform$OS.type != "unix") {
-    # register fonts for windows bmp output
-    loadfonts(device = "win")
-  } else {
-    loadfonts()
-  }
-  p1 + theme_xkcd()
-}
+# if( 'xkcd' %in% fonts()) {
+#   p1 + theme_xkcd()
+# } else {
+#   warning("No xkcd fonts installed!")
+#   library(extrafont)
+#   download.file("http://simonsoftware.se/other/xkcd.ttf", dest="xkcd.ttf", mode="wb")
+#   system("mkdir ~/.fonts")
+#   system("cp xkcd.ttf ~/.fonts")
+#   font_import(pattern="[X/x]kcd", prompt=FALSE)
+#   fonts()
+#   fonttable()
+#   if(.Patform$OS.type != "unix") {
+#     # register fonts for windows bmp output
+#     loadfonts(device = "win")
+#   } else {
+#     loadfonts()
+#   }
+#   p1 + theme_xkcd()
+# }
 
 ```
 
@@ -136,8 +140,11 @@ library(tidyverse)
 library(extrafont)
 library(ggplot2)
 df <- tibble(x = seq(0, 1, length.out = 100), y = dbeta(x, shape1 = .5, shape2 = .5))
-p1 <- ggplot(df, aes(x = x, y = y)) + geom_line() + labs(x = "A range of probabilities", y = "Probability of said probability", title = "The Standard Beta Distribution")
-p1 + theme_xkcd()
+ggplot(df, aes(x = x, y = y)) + 
+  geom_line() + 
+  labs(x = "A range of probabilities", 
+       y = "Probability of said probability", 
+       title = "The Standard Beta Distribution")
 ```
 
 Change the shape1 and shape2 parameters in the code above and see what happens to the overall shape of the distribution. Here are a few values to try:
