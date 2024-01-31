@@ -46,8 +46,8 @@ Present to ourselves on Thursday of Week 5.
 
 ```{r, echo=FALSE, message=FALSE, warning=FALSE}
 library(shiny)
-sliderInput("a","Hits",min=0,max=100,value=.5, animate=TRUE)
-sliderInput("b","Misses",min=0,max=100,value=.5, animate=F)
+sliderInput("a","Hits",min=0,max=100,value=.5, step = .5, animate=TRUE)
+sliderInput("b","Misses",min=0,max=100,value=.5, step=.5, animate=F)
 sliderInput("ncp","Non-centrality Parameter (ncp)",min=0,max=100,value=0, animate = F)
 plotOutput("myPlot")
 ```
@@ -64,7 +64,7 @@ output$myPlot <- renderPlot({
                                        shape2=as.numeric(input$b),
                                        ncp=as.numeric(input$ncp))) +
     xlim(0,1) +
-    ylim(0,10)
+    ylim(0,50)
 })
 ```
 
