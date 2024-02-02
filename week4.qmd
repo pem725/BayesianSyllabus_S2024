@@ -1,4 +1,96 @@
 ---
 title: "Week 4"
+editor: 
+  markdown: 
+    wrap: 72
 ---
 
+## Project Tips
+
+1.  Define the problem
+2.  Generate/collect data
+3.  Refine and test the model
+4.  Evaluate the results
+5.  Communicate
+
+Each of you will have multiple roles throughout the semester. I assign
+roles to each of you per project.
+
+## More on updating
+
+Remember ye ol Beta function? I mentioned last week that the beauty of
+said function (i.e., a probability density function or pdf) is the
+simplicity of updates. The Beta function is a conjugate prior to the
+Binomial distribution. This means that the posterior distribution is
+also a Beta distribution. This is a beautiful thing because it allows us
+to update our prior beliefs with new data and all such updates are
+readily communicated in the same metric - probabilities of
+probabilities. The Beta function is defined as:
+
+$$ \theta \sim \text{Beta}(\alpha, \beta) $$ where \$
+\theta \in [0, 1] \$ and \$ \alpha, \beta \> 0 \$. Recall that $\alpha$
+and $\beta$ are the parameters of the distribution; the $\alpha$ can be
+interpreted as "successes" while $\beta$ can be interpreted as
+"failures." And, the Beta function is a probability density function
+(pdf) that describes the probability of a probability.
+
+::: {.callout-warning title="Math Stuff" collapse="true"}
+A function is often expressed as $f()$ and the innards of said function
+get put inside the parentheses (the $()$ in the $f()$). What we put
+inside matters too. So, let's start taking apart the function that
+defines the probability density function.
+
+$$ f(\theta; \alpha, \beta) = \frac{\theta^{\alpha - 1}(1 - \theta)^{\beta - 1}}{B(\alpha, \beta)} $$
+
+Here, the $f(\theta; \alpha, \beta)$ says that beta can be expected to
+behave accordingly; across $\theta$ (a set of binary outcomes;
+$\theta \in [0,1]$ ), we can produce a density function (curve) for any
+real, positive values of hits ($\alpha$) and misses ($\beta$) greater
+than zero ($\alpha > 0; \beta > 0$).
+
+Now that we got the players named, we need to step back and think like a
+5th grader. The function above is a ratio:
+
+$$
+f(x) = \frac{Part}{Whole}
+$$
+
+The $Part$ here represents
+
+But wait! How can the $f()$ be defined by $\beta$ you ask? Of course you
+asked that question. How? Well, the $f()$ above is a probability density
+function that can be defined by a host of different shapes. The shape we
+are looking at here is the $B(\alpha, \beta)$ in the denominator - the
+real mover and shaker of this mathematical function.
+
+$B(\alpha, \beta)$ is the beta function.
+:::
+
+For those who long for the math, the Beta function is defined as:
+
+$$ f(\theta; \alpha, \beta) = \frac{\theta^{\alpha - 1}(1 - \theta)^{\beta - 1}}{B(\alpha, \beta)} $$
+
+Where $B(\alpha, \beta)$ is the Beta function. The Beta function is
+defined as:
+
+$$ B(\alpha, \beta) = \int_0^1 \theta^{\alpha - 1}(1 - \theta)^{\beta - 1} d\theta $$
+$$ B(\alpha, \beta) = \frac{\Gamma(\alpha)\Gamma(\beta)}{\Gamma(\alpha + \beta)} $$
+
+Where $\Gamma$ is the gamma function. The gamma function is defined as:
+
+$$ \Gamma(n) = (n - 1)! $$
+$$ \Gamma(n) = \int_0^\infty x^{n - 1}e^{-x} dx $$
+$$ \Gamma(n) = (n - 1)\Gamma(n - 1) $$
+$$ \Gamma(\frac{1}{2}) = \sqrt{\pi} $$ $$ \Gamma(n + 1) = n\Gamma(n) $$
+
+$$ \alpha = 1 + \text{number of heads} $$
+$$ \beta = 1 + \text{number of tails} $$
+
+$$ \theta \sim \text{Beta}(\alpha, \beta) $$
+
+## New Resources
+
+1.  [Python approach to Option
+    1](https://github.com/pymc-devs/pymc-resources/tree/main/Rethinking)
+2.  [Python approach to Option
+    2](https://www.kaggle.com/code/bhavinmoriya/bayesian-statistics-the-fun-way-by-will-kurt)
