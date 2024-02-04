@@ -1,5 +1,7 @@
 ---
 title: "Week 4"
+format: html
+server: shiny
 editor: 
   markdown: 
     wrap: 72
@@ -201,12 +203,68 @@ updating you ask? Glad you did. Updating is the process of combining the
 priors and the evidence. We update our priors with evidence. The Beta
 function is the EASIEST function to update. Let's see how this works.
 
-::: {.callout-note title="Some Code" appearance="simple"}
+::: {.callout-tip title="Beta Updater" appearance="simple" collapse="true"}
+<!--# NOTE:  shiny apps will not work in callout right now.  2/4/2024 -->
 :::
 
 ## An Illustration
 
-We have a new test to determine if a student knows statistics.  That test provides a binary outcome (pass/fail). We have a prior belief ($P(Knowledge) = .75$) that the student will pass the test. We have no evidence to the contrary but we hold a high regard for our students. After testing 10 students, we find that 7 pass and 3 fail. We want to update our beliefs about the probability of passing the test. We will use the Beta function to do this.
+We have a new test to determine if a student knows statistics. That test
+provides a binary outcome (pass/fail). We have a prior belief
+($P(Knowledge) = .75$) that the student will pass the test. We have no
+evidence to the contrary but we hold a high regard for our students.
+After testing 10 students, we find that 7 pass and 3 fail. We want to
+update our beliefs about the probability of passing the test. We will
+use the Beta function to do this.
+
+```{r}
+#| echo: FALSE
+#| message: FALSE
+#| warning: FALSE
+#| panel: input
+#| layout: [[33,33,33]]
+library(shiny)
+sliderInput("pa","Hits",min=0,max=100,value=.5, step = .5, animate=F)
+sliderInput("pb","Misses",min=0,max=100,value=.5, step=.5, animate=F)
+sliderInput("pncp","Non-centrality Parameter (ncp)",min=0,max=10,value=0, step=1, animate = F)
+```
+
+```{r}
+#| echo: FALSE
+#| message: FALSE
+#| warning: FALSE
+#| panel: sidebar
+library(shiny)
+sliderInput("ea","Hits",min=0,max=100,value=.5, step = .5, animate=F)
+sliderInput("eb","Misses",min=0,max=100,value=.5, step=.5, animate=F)
+sliderInput("encp","Non-centrality Parameter (ncp)",min=0,max=10,value=0, step=1, animate = F)
+```
+
+
+
+```{r}
+#| echo: FALSE
+#| message: FALSE
+#| warning: FALSE
+#| panel: fill
+plotOutput("myPlot")
+```
+
+```{r}
+#| echo: FALSE
+#| message: FALSE
+#| warning: FALSE
+#| context: server
+library(tidyverse)
+output$myPlot <- renderPlot({
+  ggplot() + 
+    stat_function(fun=dbeta, args=list(shape1=as.numeric(input$pa),
+                                       shape2=as.numeric(input$pb),
+                                       ncp=as.numeric(input$pncp))) +
+    xlim(0,1) +
+    ylim(0,50)
+})
+```
 
 ## New Resources
 
