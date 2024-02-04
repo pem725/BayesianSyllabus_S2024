@@ -16,7 +16,7 @@ editor:
 Each of you will have multiple roles throughout the semester. I assign
 roles to each of you per project.
 
-## More on updating
+## The Beta Function (Revisited)
 
 Remember ye ol Beta function? I mentioned last week that the beauty of
 said function (i.e., a probability density function or pdf) is the
@@ -25,16 +25,21 @@ Binomial distribution. This means that the posterior distribution is
 also a Beta distribution. This is a beautiful thing because it allows us
 to update our prior beliefs with new data and all such updates are
 readily communicated in the same metric - probabilities of
-probabilities. The Beta function is defined as:
+probabilities. A Beta probability density function often gets
+communicated in the Bayesian literature as such:
 
-$$ \theta \sim \text{Beta}(\alpha, \beta) $$ where \$
-\theta \in [0, 1] \$ and \$ \alpha, \beta \> 0 \$. Recall that $\alpha$
-and $\beta$ are the parameters of the distribution; the $\alpha$ can be
+$$\theta \sim \text{Beta}(\alpha, \beta)$$
+
+where probabilities ($\theta$) can be simulated ($\sim$) for shape
+values of $\alpha$ and $\beta$ using the Beta function. But what is this
+Beta function? Thus, to mathify it, we have an unknown $\theta$ that can
+be estimated from a set of possible unknowns ($\theta \in [0, 1]$) and
+where the shape values of $\alpha$ and $\beta$ are greater than zero
+($\alpha > 0; \beta > 0$). For simplicity, the $\alpha$ can be
 interpreted as "successes" while $\beta$ can be interpreted as
-"failures." And, the Beta function is a probability density function
-(pdf) that describes the probability of a probability.
+"failures."
 
-::: {.callout-warning title="Math Stuff" collapse="true"}
+::: {.callout-warning title="Mathy Stuff" collapse="true"}
 A function is often expressed as $f()$ and the innards of said function
 get put inside the parentheses (the $()$ in the $f()$). What we put
 inside matters too. So, let's start taking apart the function that
@@ -55,7 +60,9 @@ $$
 f(x) = \frac{Part}{Whole}
 $$
 
-The $Part$ here represents
+The $Part$ here represents the bit we have at hand (what we know). The
+$Whole$ is the entirety of the space we wish to compare the $Part$.
+Thus, we have a ratio of a section over the entire area.
 
 But wait! How can the $f()$ be defined by $\beta$ you ask? Of course you
 asked that question. How? Well, the $f()$ above is a probability density
@@ -63,20 +70,28 @@ function that can be defined by a host of different shapes. The shape we
 are looking at here is the $B(\alpha, \beta)$ in the denominator - the
 real mover and shaker of this mathematical function.
 
-$B(\alpha, \beta)$ is the beta function.
-:::
-
-For those who long for the math, the Beta function is defined as:
-
-$$ f(\theta; \alpha, \beta) = \frac{\theta^{\alpha - 1}(1 - \theta)^{\beta - 1}}{B(\alpha, \beta)} $$
-
-Where $B(\alpha, \beta)$ is the Beta function. The Beta function is
-defined as:
+$B(\alpha, \beta)$ is both the denominator AND the actual Beta function.
+But really, the denominator is the area under the curve or, as we
+discussed previously, the total probability space.
 
 $$ B(\alpha, \beta) = \int_0^1 \theta^{\alpha - 1}(1 - \theta)^{\beta - 1} d\theta $$
+
+Before your eyes glaze over, look at the math stuff above with a new
+perspective. That curly thing with a zero at the bottom and a 1 at the
+top just means "integral." We use that notation to alert the reader that
+the material on the right hand side of the equation is an area (or
+volume if you have more than 2 dimensions). For us, area suffices. We
+wish to know the area under the curve between 0 and 1 or the entire
+range of probability since probabilities much range between 0 and 1 (and
+include them).
+
+Integrals aside, we can also reform the beta function as a function of
+another function (gamma). Here is the formulation:
+
 $$ B(\alpha, \beta) = \frac{\Gamma(\alpha)\Gamma(\beta)}{\Gamma(\alpha + \beta)} $$
 
-Where $\Gamma$ is the gamma function. The gamma function is defined as:
+The new symbol ($\Gamma$) is worth a closer inspection. For those who
+are familiar with enough basic arithmetic, read on!
 
 $$ \Gamma(n) = (n - 1)! $$
 $$ \Gamma(n) = \int_0^\infty x^{n - 1}e^{-x} dx $$
@@ -87,6 +102,111 @@ $$ \alpha = 1 + \text{number of heads} $$
 $$ \beta = 1 + \text{number of tails} $$
 
 $$ \theta \sim \text{Beta}(\alpha, \beta) $$
+:::
+
+## Updating the Beta Function
+
+Bayes theorem allows us to update our beliefs with new evidence.
+
+$$ \text{New Beliefs} \propto \text{Prior Beliefs} \times \text{Evidence} $$
+Put more specifically with our new terminology, the posterior beliefs
+are proportional to ($\propto$) the prior beliefs times the likelihood
+of the evidence. In mathy terms, we can write this as such:
+
+$$\text{Posteriors} \propto \text{Priors} \times \text{Likelihood}$$
+and, in even more mathy terms, we can write:
+
+$$ P(\theta|X) = \frac{P(X|\theta)P(\theta)}{P(X)} $$ You will soon
+become so familiar with Bayes Theorem that you will be able to recite it
+without thinking much about it. Just remember these simple things.
+
+1.  Your new beliefs will always be directly proportional to your old
+    beliefs. Thus:
+
+$$P(\theta|X) \propto P(\theta)$$
+
+2.  Your new beliefs will always be indirectly proportional to the
+    collective probability of the evidence (all possible outcomes).
+    Thus:
+
+$$P(\theta|X) \propto \frac{1}{P(X)}$$ 3. The likelihood $P(X|\theta)$
+just flips our bits and offers us the opposite of what we want
+$P(\theta|X)$. Thus:
+
+$$P(\theta|X) \neq P(X|\theta)$$
+
+4.  Put simply, we take our old beliefs, multiply them by the likelihood
+    of the evidence, and then normalize the result.
+
+$$Posteriors = Priors \times Likelihood$$
+
+Remember those tidbits and Bayes Theorem will be available without much
+cognitive effort. Let's dig a bit deeper into these parts of Bayes
+Theorem and show how they work with the Beta function.
+
+### Prior Beliefs
+
+Recall that I mentioned something quite rudimentary about Bayesian
+statistics. We take our beliefs $\theta$ and assume they can be modeled
+by some distribution - here, we use the $\beta$ function simply because
+it IS SIMPLE. The distribution we choose is really important because it
+forms the landscape of our thought process. Thus, we "mathematize" our
+beliefs and, in so doing, we create the domain that we wish to travel in
+order to learn. You see, Bayesian models are learning models. We begin
+with beliefs.
+
+Every belief can take any function form but mostly we try to select a
+probability density function that matches what we are "believing." If
+your domain of interest uses binary terms (yes/no, heads/tails, etc.),
+then the Beta function is a good choice. Frequency counts? Gamma or
+poisson may suffice. For our purposes, we begin with binary outcomes.
+Researchers who study mortality (life/death), remission (sick/healthy),
+or achievement (pass/fail) will find the Beta function to be quite
+useful. Most of us who focus on more continuous outcomes need to look
+elsewhere; regardless of your interests, the Beta distribution works for
+illustrative purposes quite well. The Beta function is a distribution of
+probabilities. It is a distribution of beliefs expressed in
+probabilities for binary outcomes.
+
+### Evidence
+
+Empirical science is literally the use of observation to update our
+understanding. These observations are the "evidence" used to change how
+we view the world (or small slice of the world). The evidence we rely
+upon is often in the form of data that can be transformed into a
+suitable set of metrics that "mesh" with our beliefs. If I want to
+change my beliefs that pertain to a binary outcome, I must make
+observations that may be recorded as such. You are now familiar enough
+with NHST to understand that we collect data to test the null. But, in
+Bayesian statistics, we collect data to update our beliefs. If we relied
+solely on our beliefs, science would be unnecessary.
+
+### The Aftermath
+
+The posterior beliefs are the result of the evidence and the prior
+beliefs and form the basis of our new beliefs. We use these new beliefs
+to make decisions, form new theories, or revise old theories. Beliefs
+form, change, and get renewed with every study. Thus, we learn. The real
+aftermath of these models is learning. Furthermore, the posteriors serve
+as the priors for the next study. We are always learning and always
+updating our beliefs. This is the essence of Bayesian statistics. We
+learn.
+
+## Beta in Action
+
+So now we have the Beta function and the logic of Bayesian updating. The
+real reason we begin with the Beta function is that it is simple and
+easy to understand from a Bayesian updating perspective. What is
+updating you ask? Glad you did. Updating is the process of combining the
+priors and the evidence. We update our priors with evidence. The Beta
+function is the EASIEST function to update. Let's see how this works.
+
+::: {.callout-note title="Some Code" appearance="simple"}
+:::
+
+## An Illustration
+
+We have a new test to determine if a student knows statistics.  That test provides a binary outcome (pass/fail). We have a prior belief ($P(Knowledge) = .75$) that the student will pass the test. We have no evidence to the contrary but we hold a high regard for our students. After testing 10 students, we find that 7 pass and 3 fail. We want to update our beliefs about the probability of passing the test. We will use the Beta function to do this.
 
 ## New Resources
 
