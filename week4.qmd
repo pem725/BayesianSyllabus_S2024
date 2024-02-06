@@ -205,6 +205,8 @@ function is the EASIEST function to update. Let's see how this works.
 
 ::: {.callout-tip title="Beta Updater" appearance="simple" collapse="true"}
 <!--# NOTE:  shiny apps will not work in callout right now.  2/4/2024 -->
+Beta is the function du jour because it is easy to update.  Simply add the hits and misses together, respectively and you have your posterior shape parameters.  See?  Easy peasy lemon squeezy.
+
 :::
 
 ## An Illustration
@@ -224,9 +226,9 @@ use the Beta function to do this.
 #| panel: input
 #| layout: [[33,33,33]]
 library(shiny)
+sidebarPanel("Priors")
 sliderInput("pa","Hits",min=0,max=100,value=.5, step = .5, animate=F)
 sliderInput("pb","Misses",min=0,max=100,value=.5, step=.5, animate=F)
-sliderInput("pncp","Non-centrality Parameter (ncp)",min=0,max=10,value=0, step=1, animate = F)
 ```
 
 ```{r}
@@ -234,10 +236,9 @@ sliderInput("pncp","Non-centrality Parameter (ncp)",min=0,max=10,value=0, step=1
 #| message: FALSE
 #| warning: FALSE
 #| panel: sidebar
-library(shiny)
+sidebarPanel("Evidence")
 sliderInput("ea","Hits",min=0,max=100,value=0, step = .5, animate=F)
 sliderInput("eb","Misses",min=0,max=100,value=0, step=.5, animate=F)
-sliderInput("encp","Non-centrality Parameter (ncp)",min=0,max=10,value=0, step=1, animate = F)
 ```
 
 
@@ -260,17 +261,25 @@ output$myPlot <- renderPlot({
   ggplot() + 
     stat_function(fun=dbeta, args=list(shape1=as.numeric(input$pa),
                                        shape2=as.numeric(input$pb),
-                                       ncp=as.numeric(input$pncp))) +
+                                       ncp=0),
+                  colour="green",
+                  fill="green",
+                  geom="polygon",
+                  alpha=.5) +
     stat_function(fun=dbeta, args=list(shape1=(as.numeric(input$pa) + 
                                                  as.numeric(input$ea)),
                                        shape2=(as.numeric(input$pb) + 
                                                  as.numeric(input$eb)),
-                                       ncp=(as.numeric(input$pncp) +
-                                              as.numeric(input$encp)))) +
+                                       ncp=0),
+                  colour="blue", 
+                  fill="blue",
+                  geom="polygon",
+                  alpha=.5) +
     xlim(0,1) +
-    ylim(0,30)
+    ylim(0,18)
 })
 ```
+
 
 ## New Resources
 
