@@ -1,0 +1,23 @@
+---
+title: "Week 5"
+---
+
+## DAGs and Causal Inference
+
+```{r}
+#| echo: TRUE
+#| message: FALSE
+#| warning: FALSE
+#| error: FALSE
+library(dagitty)
+dag <- dagitty('dag {
+  Education -> "Math Abillty"
+  Time -> Maturation
+  Maturation -> Education
+  Maturation -> "Shoe Size"
+  Time -> Education
+}')
+plot(dag)
+```
+
+

@@ -263,18 +263,16 @@ output$myPlot <- renderPlot({
                                        shape2=as.numeric(input$pb),
                                        ncp=0),
                   colour="green",
-                  fill="green",
-                  geom="polygon",
-                  alpha=.5) +
+                  linetype="solid",
+                  linewidth = 2) +
     stat_function(fun=dbeta, args=list(shape1=(as.numeric(input$pa) + 
                                                  as.numeric(input$ea)),
                                        shape2=(as.numeric(input$pb) + 
                                                  as.numeric(input$eb)),
                                        ncp=0),
-                  colour="blue", 
-                  fill="blue",
-                  geom="polygon",
-                  alpha=.5) +
+                  colour="blue",
+                  linetype="solid",
+                  linewidth = 2) +
     xlim(0,1) +
     ylim(0,18)
 })
