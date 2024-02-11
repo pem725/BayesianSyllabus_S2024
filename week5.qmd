@@ -21,3 +21,23 @@ plot(dag)
 ```
 
 
+## Causal Inference
+
+```{r}
+#| echo: TRUE
+#| message: FALSE
+#| warning: FALSE
+#| error: FALSE
+impliedConditionalIndependencies(dag)
+round(impliedCovarianceMatrix(dag),3)
+```
+
+## Causal Inference is Hard
+
+$$\text{Math Ability} \not\perp \text{Education} | \text{Time}$$
+
+$$\text{Math Ability} \not\perp \text{Education} | \text{Maturation}$$
+
+
+
+
