@@ -6,13 +6,18 @@ title: "Week 6"
 
 Get project 1 DONE!
 
-# Thursday
-
-## Project 2
+# Thursday:  Project 2
 
 - [ ] Read the project description
 - [ ] Start thinking about what you want to do
 - [ ] Start thinking about who you want to work with
 
-### Reading
+## Project Description
+
+## Objective
+
+## Deliverable
+
+
+
 
