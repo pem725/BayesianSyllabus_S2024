@@ -8,13 +8,34 @@ Get project 1 DONE!
 
 # Thursday:  Project 2
 
-- [ ] Read the project description
-- [ ] Start thinking about what you want to do
-- [ ] Start thinking about who you want to work with
+[Project 2](https://github.com/pem725/PSYC757S24-Project2)
 
-## Project Description
+- [ ] Read: Project description
+- [ ] Think:  What you want to do?
+- [ ] Act: What you need to do to get started?
+- [ ] Inquire: What can I do to help?
 
-## Objective
+## Project Description (Task Specifics)
+
+Please read the Readme.md file in the Project 2 GitHub repository.  You will all have an invitation and full access to this private repository.  Please read the instructions and let me know if you have any questions.
+
+## What do you want to do? (Preferences)
+
+What are you interested in?  What do you want to learn?  What do you want to build?  What do you want to explore?  Think variance and reliability.  What does that mean to you?
+
+## What do you need to do to get started? (Plan)
+
+$$\sigma_{Observed}^2 = \sigma_{True}^2 + \sigma_{Error}^2$$
+
+$$\rho = \frac{\sigma_{True}^2}{\sigma_{Observed}^2}$$
+
+
+## Objectives and Milestones
+
+
+
+
+
 
 ## Deliverable
 
