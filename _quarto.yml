@@ -33,6 +33,8 @@ book:
     - schedule.qmd
     - week1.qmd
     - week2.qmd
+    - week5.qmd
+    - week6.qmd
 
 bibliography: references.bib
 
