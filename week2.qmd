@@ -291,4 +291,9 @@ $$P(A\ and\ B) = P(A \cap B) = P(A)P(B) = 0$$
     :::
     
 
+:::{.callout-note title="Some Minor Details about Lecture Notes"}
+
+Lectures 3 & 4 contain shiny apps so they will not be indexed with these regular, non-interactive notes.  The next lectures notes referenced within this syllabus are week 7 (right before spring break).  Please download and run each of the weeks listed as "shiny" app weeks.  Thank you for your attention.
+
+:::
     

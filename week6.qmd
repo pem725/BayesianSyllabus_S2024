@@ -29,17 +29,15 @@ $$\sigma_{Observed}^2 = \sigma_{True}^2 + \sigma_{Error}^2$$
 
 $$\rho = \frac{\sigma_{True}^2}{\sigma_{Observed}^2}$$
 
-
 ## Objectives and Milestones
 
-- [ ] Master variance
-- [ ] Learn modeling and simulation
-- [ ] Apply knowledge gained for the first 5 weeks
-- [ ] Think distributions
-
+- [ ] Learn:  Variance and variance components.
+- [ ] Refine: Your workflow and coding skills.
+- [ ] Build:  A project that you are proud of.
+- [ ] Explore:  New ideas and concepts.
+- [ ] Share:  Your work with others.
 
 ## Deliverable
 
-ONE presentation for the entire group.  Make it a good one.
-
+- [ ] A complete thought.
 
