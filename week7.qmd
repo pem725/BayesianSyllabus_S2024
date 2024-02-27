@@ -4,6 +4,33 @@ title: "Week 7:  Parameterization"
 
 # Tuesday
 
+We develop hypotheses is science to test them.  Testing them requires a few steps before we can really dive into tests.  First, we must estimate the unknowns.  That process of estimation is called parameterization.  What do I mean by parameters?  I mean the unknowns in our model.  For example, in a simple, bivariate (one predictor, one outcome) linear regression model, we have two parameters:  the intercept and the slope.  We must estimate these parameters before we can test our hypotheses OR make predictions.  We use the data to estimate these parameters.  We then use these estimates to test our hypotheses and predict future events.  Before hypothesis testing and prediction, we must parameterize our model.  This is the process of estimation.
+
+## Central Tendency
+
+$$\mu = \frac{\sum_{i=1}^n x_i}{n}$$
+## Dispersion
+
+$$\sigma^2 = \frac{SS}{df} =\frac{\sum_{i=1}^n (x_i - \mu)^2}{n-1}$$
+
+## Coefficients
+
+$$\beta = \frac{\sum_{i=1}^n (x_i - \mu)(y_i - \nu)}{\sum_{i=1}^n (x_i - \mu)^2}$$
+
+# The Logic Here
+
+We must test our data to first summarize it correctly - a process we refer to as model fitting or parameterization.  In the process of parameterization, we estimate the unknowns in our model.  We then use these estimates to test our hypotheses.  This is the process of hypothesis testing.  We will cover this in more detail in the coming weeks.  For now, we focus on parameterization and estimation.  
+
+
+## An example
+
+```{r Example}
+data(mtcars)
+lm1 <- lm(mpg~disp, data=mtcars)
+
+
+```
+
 
 
 
