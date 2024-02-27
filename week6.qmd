@@ -32,13 +32,14 @@ $$\rho = \frac{\sigma_{True}^2}{\sigma_{Observed}^2}$$
 
 ## Objectives and Milestones
 
-
-
-
+- [ ] Master variance
+- [ ] Learn modeling and simulation
+- [ ] Apply knowledge gained for the first 5 weeks
+- [ ] Think distributions
 
 
 ## Deliverable
 
-
+ONE presentation for the entire group.  Make it a good one.
 
 
