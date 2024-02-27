@@ -9,6 +9,7 @@ We develop hypotheses is science to test them.  Testing them requires a few step
 ## Central Tendency
 
 $$\mu = \frac{\sum_{i=1}^n x_i}{n}$$
+
 ## Dispersion
 
 $$\sigma^2 = \frac{SS}{df} =\frac{\sum_{i=1}^n (x_i - \mu)^2}{n-1}$$
@@ -25,8 +26,16 @@ We must test our data to first summarize it correctly - a process we refer to as
 ## An example
 
 ```{r Example}
+library(ggplot2)
+library(dplyr)
+library(brms)
+library(shinystan)
+
 data(mtcars)
 lm1 <- lm(mpg~disp, data=mtcars)
+
+lm1.brms <- brm(mpg~disp, data=mtcars)
+shinystan::launch_shinystan(lm1.brms)
 
 
 ```
