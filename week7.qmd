@@ -32,9 +32,10 @@ library(brms)
 library(shinystan)
 
 data(mtcars)
-lm1 <- lm(mpg~disp, data=mtcars)
+lm1 <- lm(mpg~disp*as.factor(cyl), data=mtcars)
+summary(lm1)
 
-lm1.brms <- brm(mpg~disp, data=mtcars)
+lm1.brms <- brm(lm1, data=mtcars)
 shinystan::launch_shinystan(lm1.brms)
 ```
 
@@ -55,7 +56,16 @@ We will continue our discussion of parameterization and estimation.  We will als
 6. Confidence Intervals
 7. Prediction Intervals
 
+## Some Considerations
+
+Think of central tendency as a way for us to get the best guesses of our data.
+
 $$Y = \hat{Y} + \epsilon$$
+The guesses we make are deterministic (i.e., they are affected by data).  The errors are stochastic (i.e., they are not affected by data).  We can think of our observations as the sum of these two components.
 
 $$\text{Observations} = \text{Deterministic Component} + \text{Stochastic Component}$$
+The logic here is that we can make the best guesses we can, but there will always be some error in our guesses.  This is the nature of the world.  We can never know everything.  We can only make the best guesses with the available data - just the nature of science and life.  We can never know the truth; we can only make the best guesses available and quantify our uncertainty.
 
+$$Y_{Obs} = \hat{Y}_{Det} + \epsilon_{Stoch}$$
+
+We shall talk about this today.
