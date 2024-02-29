@@ -10,6 +10,9 @@ _book
 *.json
 *.ttf
 images/
+<<<<<<< HEAD
 *.html
 *_files/*
 *.rmarkdown
+week*_files
+week*.html
