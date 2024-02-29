@@ -10,3 +10,5 @@ _book
 *.json
 *.ttf
 images/
+week*_files
+week*.html

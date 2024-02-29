@@ -37,7 +37,6 @@ lm1 <- lm(mpg~disp, data=mtcars)
 lm1.brms <- brm(mpg~disp, data=mtcars)
 shinystan::launch_shinystan(lm1.brms)
 
-
 ```
 
 
