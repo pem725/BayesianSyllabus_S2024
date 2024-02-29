@@ -10,3 +10,6 @@ _book
 *.json
 *.ttf
 images/
+*.html
+*_files/*
+*.rmarkdown
