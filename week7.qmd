@@ -36,12 +36,26 @@ lm1 <- lm(mpg~disp, data=mtcars)
 
 lm1.brms <- brm(mpg~disp, data=mtcars)
 shinystan::launch_shinystan(lm1.brms)
-
-
 ```
 
 
 
 
 # Thursday
+
+We will continue our discussion of parameterization and estimation.  We will also discuss the logic of hypothesis testing and prediction
+
+## Parameters
+
+1. Central Tendency
+2. Dispersion
+3. Coefficients
+4. Errors
+5. Effect sizes
+6. Confidence Intervals
+7. Prediction Intervals
+
+$$Y = \hat{Y} + \epsilon$$
+
+$$\text{Observations} = \text{Deterministic Component} + \text{Stochastic Component}$$
 
