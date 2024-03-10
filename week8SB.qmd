@@ -1,0 +1,14 @@
+---
+title: "Week 8"
+---
+
+Spring Break!
+
+Here are a few things that you might find useful.
+
+1. Remember Stein's paradox?  Well, there are a few.  The website Rising Entropy had a very nice explanation of Simpson's paradox.  In fact, one of the best I have seen with respect to paradoxes explained.  Here is the link:  [Rising Entropy: Simpson's Paradox](https://risingentropy.com/simpsons-paradox/).
+2. I stumbled upon that website while searching for a nice explanation of entropy and was taken by the simplicity of the explanation.  Read it.  Why?  Entropy is an important characteristic of Bayesian models.  Again, for the curious, read:  [Rising Entropy: Entropy](https://risingentropy.com/entropy-is-total-expected-surprise//).
+3. 
+
+
+Enjoy the break!
