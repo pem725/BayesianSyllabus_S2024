@@ -4,12 +4,63 @@ title: "Week 9"
 
 # Testing/MCMC
 
-
-
-
 ## Tuesday
 
+- [ ] CDF vs. PDF
 
+```{r}
+#| echo: true
+#| message: false
+#| warning: false
+#| error: false
+
+library(tidyverse)
+library(ggplot2)
+
+# plot the CDF and PDF of a normal distribution
+x <- seq(-4, 4, length.out = 1000)
+y <- dnorm(x)
+z <- pnorm(x)
+
+df <- data.frame(x, y, z)
+
+ggplot(df, aes(x)) +
+  geom_line(aes(y = y), color = "blue") +
+  geom_line(aes(y = z), color = "red") +
+  labs(title = "CDF vs. PDF",
+       x = "x",
+       y = "Density") +
+  theme_minimal()
+
+
+
+```
+
+- [ ] MCMC
+
+```{r}
+#| echo: true
+#| message: false
+#| warning: false
+#| error: false
+
+library(tidyverse)
+library(ggplot2)
+library(MCMCpack)
+
+
+# generate data
+set.seed(123)
+n <- 100
+x <- rnorm(n, mean = 0, sd = 1)
+y <- 2 + 3*x + rnorm(n, mean = 0, sd = 1)
+
+# demonstrate MCMC
+
+# plot the MCMC
+
+
+```
 
 
 ## Thursday
