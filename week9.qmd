@@ -36,7 +36,7 @@ ggplot(df, aes(x)) +
 
 ```
 
-- [ ] MCMC
+- [ ] MCMC - see [this example](https://cran.r-project.org/web/packages/bayesplot/vignettes/plotting-mcmc-draws.html)
 
 ```{r}
 #| echo: true
@@ -44,25 +44,262 @@ ggplot(df, aes(x)) +
 #| warning: false
 #| error: false
 
-library(tidyverse)
-library(ggplot2)
-library(MCMCpack)
+library("bayesplot")
+library("ggplot2")
+library("rstanarm")      
 
+fit <- stan_glm(mpg ~ ., data = mtcars, seed = 1111)
+print(fit)
 
-# generate data
-set.seed(123)
-n <- 100
-x <- rnorm(n, mean = 0, sd = 1)
-y <- 2 + 3*x + rnorm(n, mean = 0, sd = 1)
+posterior <- as.array(fit)
+dim(posterior)
+dimnames(posterior)
 
 # demonstrate MCMC
 
 # plot the MCMC
+color_scheme_set("red")
+mcmc_intervals(posterior, pars = c("cyl", "drat", "am", "sigma"))
 
+mcmc_areas(
+  posterior, 
+  pars = c("cyl", "drat", "am", "sigma"),
+  prob = 0.8, # 80% intervals
+  prob_outer = 0.99, # 99%
+  point_est = "mean"
+)
+
+color_scheme_set("green")
+mcmc_hist(posterior, pars = c("wt", "sigma"))
+
+color_scheme_set("brightblue")
+mcmc_hist_by_chain(posterior, pars = c("wt", "sigma"))
+
+color_scheme_set("purple")
+mcmc_dens(posterior, pars = c("wt", "sigma"))
+
+mcmc_dens_overlay(posterior, pars = c("wt", "sigma"))
+
+color_scheme_set("teal")
+mcmc_violin(posterior, pars = c("wt", "sigma"), probs = c(0.1, 0.5, 0.9))
+
+color_scheme_set("gray")
+mcmc_scatter(posterior, pars = c("(Intercept)", "wt"), 
+             size = 1.5, alpha = 0.5)
+
+# requires hexbin package
+if (requireNamespace("hexbin", quietly = TRUE)) {
+  mcmc_hex(posterior, pars = c("(Intercept)", "wt"))
+}
+
+color_scheme_set("pink")
+mcmc_pairs(posterior, pars = c("(Intercept)", "wt", "sigma"),
+           off_diag_args = list(size = 1.5))
+
+
+color_scheme_set("blue")
+mcmc_trace(posterior, pars = c("wt", "sigma"))
+
+color_scheme_set("mix-blue-red")
+mcmc_trace(posterior, pars = c("wt", "sigma"), 
+           facet_args = list(ncol = 1, strip.position = "left"))
+
+mcmc_trace_highlight(posterior, pars = "sigma", highlight = 3)
 
 ```
 
 
 ## Thursday
 
+
+- [ ] Bootstrapping
+
+```{r Bootstrapping}
+#| echo: true
+#| message: false
+#| warning: false
+#| error: false
+
+library(tidymodels)
+library(dplyr)
+
+ggplot(mtcars, aes(x = wt, y = mpg)) +
+  geom_point() +
+  geom_smooth(method = "lm")
+
+lm_model <- lm(mpg ~ wt, data = mtcars)
+
+lm_modelENG <- linear_reg() %>%
+  set_engine("lm") %>%
+  set_mode("regression")
+
+lm_fit <- lm_modelENG %>%
+  fit(mpg ~ wt, data = mtcars)
+
+summary(lm_model)
+
+lm_fit
+
+# Bootstrapping before A/B Testing
+
+set.seed(123)
+boots <- bootstraps(mtcars, times = 1000)
+
+# from https://www.tidymodels.org/learn/statistics/bootstrap/
+fit_lm_on_boot <- function(split){
+  lm(mpg ~ wt, analysis(split))
+}
+
+boot_models <- boots %>%
+  mutate(model = map(splits, fit_lm_on_boot),
+         coef_info = map(model, tidy))
+
+boot_coefs <- boot_models %>%
+  unnest(coef_info)
+
+boot_coefs %>%
+  group_by(term) %>%
+  summarize(mean = mean(estimate), sd = sd(estimate))
+
+percentile_intervals <- int_pctl(boot_models, coef_info)
+
+ggplot(boot_coefs, aes(estimate)) +
+  geom_histogram(bins = 30) +
+  facet_wrap( ~ term, scales = "free") +
+  geom_vline(aes(xintercept = .lower), data = percentile_intervals, col = "blue") +
+  geom_vline(aes(xintercept = .upper), data = percentile_intervals, col = "blue")
+```
+
+- [ ] A/B Testing
+
+```{r ABTesting}
+# A/B Testing
+
+splits <- initial_split(mtcars, prop = 0.75, strata = "am")
+train_data <- training(splits)
+test_data <- testing(splits)
+
+lm_modelENG <- linear_reg() %>%
+  set_engine("lm") %>%
+  set_mode("regression")
+
+lm_fit <- lm_modelENG %>%
+  fit(mpg ~ wt, data = train_data)
+
+lm_fit
+
+lm_fit %>%
+  predict(new_data = test_data) %>%
+  bind_cols(test_data) 
+
+## predict the future
+KBB2024 <- tribble(
+  ~car, ~mpg, ~wt,
+  "Honda Civic", 35, 2.877,
+  "Hyundai Elantra", 36, 2.868,
+  "Toyota Corolla", 35, 2.955,
+  "Honday Accord", 32, 3.239,
+  "Toyota Camry", 32, 3.310,
+  "Toyota Crown", 41, 3.98,
+  "Kia Stinger", 25, 3.814,
+  "Chrysler 300", 23, 4.013,
+  "Volkswagen Arteon", 28, 3.677
+  )
+
+lm_fit %>%
+  predict(new_data = KBB2024) %>%
+  bind_cols(KBB2024[,c(2,3,1)]) 
+
+
+
+#  metrics(truth = mpg, estimate = .pred)
+
+boot_aug <- 
+  boot_models %>% 
+  sample_n(200) %>% 
+  mutate(augmented = map(model, augment)) %>% 
+  unnest(augmented)
+
+ggplot(boot_aug, aes(wt, mpg)) +
+  geom_line(aes(y = .fitted, group = id), alpha = .2, col = "blue") +
+  geom_point()
+
+
+# key functions to implement here
+# - initial_split
+# - training
+# - testing
+# - linear_reg
+# - set_engine
+# - set_mode
+# - fit
+# - predict
+# - int_pctl
+
+```
+
+- [ ] Alternative Models
+
+```{r AlternativeModels}
+nlsfit <- nls(mpg ~ k / wt + b, mtcars, start = list(k = 1, b = 0))
+summary(nlsfit)
+
+ggplot(mtcars, aes(wt, mpg)) +
+    geom_point() +
+    geom_line(aes(y = predict(nlsfit)))
+
+set.seed(27)
+boots <- bootstraps(mtcars, times = 2000, apparent = TRUE)
+
+fit_nls_on_bootstrap <- function(split) {
+    nls(mpg ~ k / wt + b, analysis(split), start = list(k = 1, b = 0))
+}
+
+boot_models <-
+  boots %>% 
+  mutate(model = map(splits, fit_nls_on_bootstrap),
+         coef_info = map(model, tidy))
+
+boot_coefs <- 
+  boot_models %>% 
+  unnest(coef_info)
+
+percentile_intervals <- int_pctl(boot_models, coef_info)
+
+ggplot(boot_coefs, aes(estimate)) +
+  geom_histogram(bins = 30) +
+  facet_wrap( ~ term, scales = "free") +
+  geom_vline(aes(xintercept = .lower), data = percentile_intervals, col = "blue") +
+  geom_vline(aes(xintercept = .upper), data = percentile_intervals, col = "blue")
+
+boot_aug <- 
+  boot_models %>% 
+  sample_n(200) %>% 
+  mutate(augmented = map(model, augment)) %>% 
+  unnest(augmented)
+
+ggplot(boot_aug, aes(wt, mpg)) +
+  geom_line(aes(y = .fitted, group = id), alpha = .2, col = "blue") +
+  geom_point()
+
+fit_spline_on_bootstrap <- function(split) {
+    data <- analysis(split)
+    smooth.spline(data$wt, data$mpg, df = 4)
+}
+
+boot_splines <- 
+  boots %>% 
+  sample_n(200) %>% 
+  mutate(spline = map(splits, fit_spline_on_bootstrap),
+         aug_train = map(spline, augment))
+
+splines_aug <- 
+  boot_splines %>% 
+  unnest(aug_train)
+
+ggplot(splines_aug, aes(x, y)) +
+  geom_line(aes(y = .fitted, group = id), alpha = 0.2, col = "blue") +
+  geom_point()
+
+```
 
