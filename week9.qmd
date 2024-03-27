@@ -120,7 +120,6 @@ And finally, check this out for ![another basic example of MCMC.](https://theore
 source("https://gist.githubusercontent.com/florianhartig/785b3bcfb1d111d627568f4d1e038fc9/raw/d07f86b1af57627dd76f4eed2914589131626c72/metropolis.R")
 ```
 
-## Thursday
 
 - [ ] Bootstrapping
 
