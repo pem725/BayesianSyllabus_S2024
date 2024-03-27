@@ -4,7 +4,9 @@ title: "Weeks 10-15"
 
 # Week 10
 
-Review project details and get updates
+- Review project details and get updates
+- Discuss project 2
+- Q&A Session
 
 # Week 11
 
@@ -18,6 +20,41 @@ Introduce Project 3
 # Week 12
 
 Stan introduction via brms
+
+```{r}
+#| echo: TRUE
+#| message: FALSE
+#| warning: FALSE
+#| error: FALSE
+
+library(brms)
+library(tidyverse)
+
+# simulate
+set.seed(123)
+n <- 100
+x <- rnorm(n)
+y <- 2*x + rnorm(n)
+data <- data.frame(x, y)
+
+# fit
+fit <- brm(y ~ x, data = data, chains = 2, iter = 500)
+summary(fit)
+
+```
+
+```{r}
+#| echo: TRUE
+#| message: FALSE
+#| warning: FALSE
+#| error: FALSE
+#| class-output: stan
+
+# extract stan code from brms
+
+writeLines(stancode(fit))
+```
+
 Real life examples and applications - unique to Bayesian analyses
 
 # Week 13
