@@ -1,0 +1,34 @@
+---
+title: "Weeks 10-15"
+---
+
+# Week 10
+
+Review project details and get updates
+
+# Week 11
+
+Tuesday:  Gain clarity on Tuesday for final third of semester
+
+Thursday:  Project demonstration and presentation
+
+Introduce Project 3
+
+
+# Week 12
+
+Stan introduction via brms
+Real life examples and applications - unique to Bayesian analyses
+
+# Week 13
+
+Playing with stan
+The rudiments of the stan syntax and structure
+
+# Week 14
+
+Real life examples
+
+# Week 15
+
+Final project presentation
