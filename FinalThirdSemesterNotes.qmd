@@ -69,8 +69,9 @@ writeLines(stancode(fit))
 ## Real life examples and applications - unique to Bayesian analyses
 
 - [ ] [A new look at p-values for RCTs](http://www.stat.columbia.edu/~gelman/research/published/pval_RCTs_rev3.pdf)
-- [] [A novel clinical trial](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7826635/)
-- [] [Clinical nutrition research](https://pubmed.ncbi.nlm.nih.gov/37715007/)
+- [ ] [A novel clinical trial](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7826635/)
+- [ ] [Clinical nutrition research](https://pubmed.ncbi.nlm.nih.gov/37715007/)
+
 
 
 # Week 13
