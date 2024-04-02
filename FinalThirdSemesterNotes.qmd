@@ -27,6 +27,7 @@ Introduce Project 3
 #| warning: FALSE
 #| error: FALSE
 #| output: false
+#| cache: false
 
 library(brms)
 library(tidyverse)
@@ -39,7 +40,7 @@ y <- 2*x + rnorm(n)
 data <- data.frame(x, y)
 
 # fit
-fit <- brm(y ~ x, data = data, chains = 2, iter = 500)
+fit <- brm(y ~ x, data = data, chains = 1, iter = 100)
 
 ```
 
@@ -54,7 +55,7 @@ summary(fit)
 ```
 
 
-```{r}
+```{r stcode}
 #| echo: TRUE
 #| message: FALSE
 #| warning: FALSE
@@ -65,6 +66,18 @@ summary(fit)
 
 writeLines(stancode(fit))
 ```
+
+```{r stdata}
+#| echo: TRUE
+#| message: FALSE
+#| warning: FALSE
+#| error: FALSE
+#| cache: false
+
+# extract stan data from brms
+summary(standata(fit))
+```
+
 
 ## Real life examples and applications - unique to Bayesian analyses
 
