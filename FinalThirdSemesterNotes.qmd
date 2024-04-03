@@ -75,7 +75,7 @@ writeLines(stancode(fit))
 #| cache: false
 
 # extract stan data from brms
-summary(standata(fit))
+standata(fit)
 ```
 
 
@@ -89,12 +89,26 @@ summary(standata(fit))
 
 # Week 13
 
-Playing with stan
-The rudiments of the stan syntax and structure
+We begin our final week of new material by introducing some details that will help you apply Bayesian analyses to your own research.  We will also discuss the final project and how to present your work.  Here are some broad stroke details I wish to discuss:
+
+1.  How to apply Bayesian analyses to your own research
+  a.  Ask different questions of your data
+  b.  Use different priors (test, try, learn)
+  c.  Use different models (distributions, link functions, etc.)
+2.  How to present your work
+  a.  What to include in your presentation
+  b.  What details matter?
+  c.  How to answer questions as they arise (post presentation)
+3.  How to write up your work
+  a.  What to include in your write-up
+  b.  What details matter?
+  c.  How do you anticipate questions and answer them in your write-up?
+
 
 # Week 14
 
-Real life examples
+Real life examples and applications - unique to Bayesian analyses
+
 
 # Week 15
 
