@@ -109,6 +109,53 @@ We begin our final week of new material by introducing some details that will he
 
 Real life examples and applications - unique to Bayesian analyses
 
+## Julia and Stan
+
+```{julia}
+using Stan
+
+# simulate
+n = 100
+x = randn(n)
+y = 2*x + randn(n)
+
+# fit
+model = "
+data {
+  int<lower=0> N;
+  vector[N] x;
+  vector[N] y;
+}
+parameters {
+  real alpha;
+  real beta;
+  real<lower=0> sigma;
+}
+model {
+  y ~ normal(alpha + beta * x, sigma);
+}
+"
+data = Dict("N" => n, "x" => x, "y" => y)
+fit = stan(model, data = data, iter = 1000, chains = 1)
+```
+
+```{julia}
+# print the fit
+println(fit)
+```
+
+```{julia}
+# extract stan code from brms
+println(stancode(fit))
+```
+
+```{julia}
+# extract stan data from brms
+println(standata(fit))
+  
+```
+
+
 
 # Week 15
 
