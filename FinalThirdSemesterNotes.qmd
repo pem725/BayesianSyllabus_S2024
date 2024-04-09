@@ -109,6 +109,35 @@ We begin our final week of new material by introducing some details that will he
 
 Real life examples and applications - unique to Bayesian analyses
 
+## Julia First
+
+1. Install Julia and Friends
+  a. [Download Julia](https://julialang.org/downloads/)
+  b. [Install Julia](https://julialang.org/downloads/platform/)
+  c. [Install IJulia](https://quarto.org/docs/computations/julia.html#installation)
+  d. [Install Stan.jl](https://github.com/StanJulia/Stan.jl)
+  e. [Install Plots.jl](http://docs.juliaplots.org/latest/)
+  
+2.  Test your installation
+  
+Plot function pair (x(u), y(u)). 
+See @fig-parametric for an example.
+
+```{julia}
+#| label: fig-parametric
+#| fig-cap: "Parametric Plots"
+
+using Plots
+
+plot(sin, 
+     x->sin(2x), 
+     0, 
+     2π, 
+     leg=false, 
+     fill=(0,:lavender))
+```  
+  
+
 ## Julia and Stan
 
 ```{julia}
