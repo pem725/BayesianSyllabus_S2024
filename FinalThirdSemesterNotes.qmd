@@ -127,8 +127,6 @@ See @fig-parametric for an example.
 ## Julia and Stan
 
 
-
-
 # Week 15
 
 Final project presentation
