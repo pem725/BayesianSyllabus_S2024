@@ -1,0 +1,85 @@
+---
+title: "Plots Demo"
+execute:
+  enabled: true
+---
+
+## Parametric Plots
+
+Plot function pair (x(u), y(u)). 
+See @fig-parametric for an example.
+
+```{julia}
+#| label: fig-parametric
+#| fig-cap: "Parametric Plots"
+
+using Plots
+
+plot(sin, 
+     x->sin(2x), 
+     0, 
+     2π, 
+     leg=false, 
+     fill=(0,:lavender))
+```
+
+
+```{julia}
+using Stan
+
+# simulate
+n = 100
+x = randn(n)
+y = 2*x + randn(n)
+
+# fit
+model = "
+data {
+  int<lower=0> N;
+  vector[N] x;
+  vector[N] y;
+}
+parameters {
+  real alpha;
+  real beta;
+  real<lower=0> sigma;
+}
+model {
+  y ~ normal(alpha + beta * x, sigma);
+}
+"
+data = Dict("N" => n, "x" => x, "y" => y)
+fit = stan(model, data = data, iter = 1000, chains = 1)
+```
+
+```{julia}
+# print the fit
+println(fit)
+```
+
+```{julia}
+# extract stan code from brms
+println(stancode(fit))
+```
+
+```{julia}
+# extract stan data from brms
+println(standata(fit))
+  
+```
+
+
+
+```{julia}
+#| label: fig-parametric
+#| fig-cap: "Parametric Plots"
+
+using Plots
+
+plot(sin, 
+     x->sin(2x), 
+     0, 
+     2π, 
+     leg=false, 
+     fill=(0,:lavender))
+```  

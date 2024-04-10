@@ -133,7 +133,6 @@ plot(sin,
      leg=false, 
      fill=(0,:lavender))
 ```  
-  
 
 ## Julia and Stan
 
