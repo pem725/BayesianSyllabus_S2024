@@ -1,0 +1,147 @@
+---
+title: "Week 14"
+---
+
+Real life examples and applications - unique to Bayesian analyses
+
+::: {.callout-warning "Warning" collapse="true"}
+The use of Julia is an novel extension to the existing R/stan framework. Use the following steps with low expectations and great caution. Julia is bleeding edge software that requires you to install software from trusted people who, through that trust, expect you to do some of the installation legwork to get things going. If their software gains traction, the future installation steps will be "automagic" (my word). For now, they require you to know some things before you delve into this edgy domain. I provide you with some of these steps; your computer may differ sufficiently from mine (linux and mac) to render these instructions useless. Be warned.
+:::
+
+## cmdstan and Julia
+
+These are the current tools that I am using for Bayesian analyses.
+
+### cmdstan
+
+### Julia
+
+1.  Install Julia and Friends
+
+```{=html}
+<!-- -->
+```
+a.  [Download Julia](https://julialang.org/downloads/)
+b.  [Install Julia](https://julialang.org/downloads/platform/)
+c.  [Install IJulia](https://quarto.org/docs/computations/julia.html#installation)
+d.  [Install Stan.jl](https://github.com/StanJulia/Stan.jl)
+e.  [Install Plots.jl](http://docs.juliaplots.org/latest/)
+
+```{=html}
+<!-- -->
+```
+2.  Test your installation
+
+Plot function pair (x(u), y(u)). See @fig-parametric for an example.
+
+```{julia}
+using Plots
+
+plot(sin, 
+     x->sin(2x), 
+     0, 
+     2π, 
+     leg=false, 
+     fill=(0,:lavender))
+```
+
+## Julia and Stan
+
+```{julia}
+CMDSTAN = homedir() * "/GitTemp/cmdstan/"
+
+using StanSample, MCMCChains
+
+binorm_model = "
+  transformed data {
+      matrix[2,2] Sigma;
+      vector[2] mu;
+
+      mu[1] = 0.0;
+      mu[2] = 0.0;
+      Sigma[1,1] = 1.0;
+      Sigma[2,2] = 1.0;
+      Sigma[1,2] = 0.10;
+      Sigma[2,1] = 0.10;
+  }
+  parameters {
+      vector[2] y;
+  }
+  model {
+        y ~ multi_normal(mu, Sigma);
+  }
+"
+
+sm = SampleModel("binormal", binorm_model);
+
+rc = stan_sample(sm)
+
+if success(rc)
+  chn = read_samples(sm, :mcmcchains)
+  chn |> display
+end
+```
+
+```{julia}
+CMDSTAN = homedir() * "/GitTemp/cmdstan/"
+using CmdStan
+
+# simulate
+n = 100
+x = randn(n)
+y = 2*x + randn(n)
+
+# fit
+const model = "
+data {
+  int<lower=1> N;  // total number of observations
+  vector[N] Y;  // response variable
+  int<lower=1> K;  // number of population-level effects
+  matrix[N, K] X;  // population-level design matrix
+  int<lower=1> Kc;  // number of population-level effects after centering
+  int prior_only;  // should the likelihood be ignored?
+}
+transformed data {
+  matrix[N, Kc] Xc;  // centered version of X without an intercept
+  vector[Kc] means_X;  // column means of X before centering
+  for (i in 2:K) {
+    means_X[i - 1] = mean(X[, i]);
+    Xc[, i - 1] = X[, i] - means_X[i - 1];
+  }
+}
+parameters {
+  vector[Kc] b;  // regression coefficients
+  real Intercept;  // temporary intercept for centered predictors
+  real<lower=0> sigma;  // dispersion parameter
+}
+transformed parameters {
+  real lprior = 0;  // prior contributions to the log posterior
+  lprior += student_t_lpdf(Intercept | 3, 0.2, 2.5);
+  lprior += student_t_lpdf(sigma | 3, 0, 2.5)
+    - 1 * student_t_lccdf(0 | 3, 0, 2.5);
+}
+model {
+  // likelihood including constants
+  if (!prior_only) {
+    target += normal_id_glm_lpdf(Y | Xc, Intercept, b, sigma);
+  }
+  // priors including constants
+  target += lprior;
+}
+generated quantities {
+  // actual population-level intercept
+  real b_Intercept = Intercept - dot_product(means_X, b);
+}
+"
+data = Dict("N" => n, "x" => x, "y" => y)
+
+sm = Stanmodel(name="bivmod", model=model)
+rc = stan_sample(sm, model)
+
+if success
+  chn = read_samples(sm, :mcmcchains)
+  chn |> display
+end
+
+
+```

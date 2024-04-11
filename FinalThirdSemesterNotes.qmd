@@ -1,6 +1,8 @@
 ---
-title: "Weeks 10-15"
+title: "Weeks 10-15 - DEPRECATED"
 ---
+
+SEE EACH WEEK NOW.  I WILL DELETE THIS MATERIAL SHORTLY.
 
 # Week 10
 
@@ -230,24 +232,11 @@ sm = Stanmodel(name="bivmod", model=model)
 rc = stan_sample(sm, model)
 
 if success
+  chn = read_samples(sm, :mcmcchains)
+  chn |> display
+end
 
-rc = stan_sample(sm, :mcmcchains)
-```
 
-```{julia}
-# print the fit
-println(fit)
-```
-
-```{julia}
-# extract stan code from brms
-println(stancode(fit))
-```
-
-```{julia}
-# extract stan data from brms
-println(standata(fit))
-  
 ```
 
 # Week 15
