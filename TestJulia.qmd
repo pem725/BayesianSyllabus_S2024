@@ -25,6 +25,8 @@ plot(sin,
 
 
 ```{julia}
+CMDSTAN = homedir() * "/GitTemp/cmdstan/"
+
 using Stan
 
 # simulate
@@ -49,37 +51,15 @@ model {
 }
 "
 data = Dict("N" => n, "x" => x, "y" => y)
-fit = stan(model, data = data, iter = 1000, chains = 1)
+
+sm = Stanmodel(name="bivmodemo", model=model)
+rc = stan_sample(sm, model)
+
+if success(rc)
+  chn = read_samples(sm, :mcmcchains)
+  chn |> display
+end
+
+
+#fit = stan(model, data = data, iter = 1000, chains = 1)
 ```
-
-```{julia}
-# print the fit
-println(fit)
-```
-
-```{julia}
-# extract stan code from brms
-println(stancode(fit))
-```
-
-```{julia}
-# extract stan data from brms
-println(standata(fit))
-  
-```
-
-
-
-```{julia}
-#| label: fig-parametric
-#| fig-cap: "Parametric Plots"
-
-using Plots
-
-plot(sin, 
-     x->sin(2x), 
-     0, 
-     2π, 
-     leg=false, 
-     fill=(0,:lavender))
-```  

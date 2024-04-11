@@ -229,9 +229,13 @@ data = Dict("N" => n, "x" => x, "y" => y)
 sm = Stanmodel(name="bivmod", model=model)
 rc = stan_sample(sm, model)
 
-if success
+if success(rc)
+  chn = read_samples(sm, :mcmcchains)
+  chn |> display
+end
 
-rc = stan_sample(sm, :mcmcchains)
+
+#rc = stan_sample(sm, :mcmcchains)
 ```
 
 ```{julia}
