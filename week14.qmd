@@ -8,28 +8,45 @@ Real life examples and applications - unique to Bayesian analyses
 The use of Julia is an novel extension to the existing R/stan framework. Use the following steps with low expectations and great caution. Julia is bleeding edge software that requires you to install software from trusted people who, through that trust, expect you to do some of the installation legwork to get things going. If their software gains traction, the future installation steps will be "automagic" (my word). For now, they require you to know some things before you delve into this edgy domain. I provide you with some of these steps; your computer may differ sufficiently from mine (linux and mac) to render these instructions useless. Be warned.
 :::
 
+```{mermaid}
+graph TD
+    A[stan] --> B[Stan.jl]
+    B --> C[Plots.jl]
+    C --> D[CmdStan.jl]
+    D --> E[CmdStan]
+    E --> F[Stan]
+    F --> G[Bayesian Analyses]
+
+```
+
+
+
+
+
+## Julia and Turing
+
+[Why not?](https://storopoli.io/Bayesian-Julia/)
+
+
 ## cmdstan and Julia
 
 These are the current tools that I am using for Bayesian analyses.
 
 ### cmdstan
 
+1. [Install cmdstan](https://mc-stan.org/docs/cmdstan-guide/installation.html)
+2. 
+
+
 ### Julia
 
 1.  Install Julia and Friends
-
-```{=html}
-<!-- -->
-```
 a.  [Download Julia](https://julialang.org/downloads/)
 b.  [Install Julia](https://julialang.org/downloads/platform/)
 c.  [Install IJulia](https://quarto.org/docs/computations/julia.html#installation)
 d.  [Install Stan.jl](https://github.com/StanJulia/Stan.jl)
 e.  [Install Plots.jl](http://docs.juliaplots.org/latest/)
 
-```{=html}
-<!-- -->
-```
 2.  Test your installation
 
 Plot function pair (x(u), y(u)). See @fig-parametric for an example.
@@ -84,6 +101,7 @@ end
 
 ```{julia}
 CMDSTAN = homedir() * "/GitTemp/cmdstan/"
+
 using CmdStan
 
 # simulate
@@ -92,7 +110,7 @@ x = randn(n)
 y = 2*x + randn(n)
 
 # fit
-const model = "
+const smod = "
 data {
   int<lower=1> N;  // total number of observations
   vector[N] Y;  // response variable
@@ -135,8 +153,12 @@ generated quantities {
 "
 data = Dict("N" => n, "x" => x, "y" => y)
 
-sm = Stanmodel(name="bivmod", model=model)
-rc = stan_sample(sm, model)
+sm = Stanmodel(name="bivmod", model=smod)
+sm |> display
+
+
+
+rc = stan_sample(sm, smod)
 
 if success
   chn = read_samples(sm, :mcmcchains)
