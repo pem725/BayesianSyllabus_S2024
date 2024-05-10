@@ -10,16 +10,19 @@ The use of Julia is an novel extension to the existing R/stan framework. Use the
 
 ```{mermaid}
 graph TD
-    A[stan] --> B[Stan.jl]
-    B --> C[Plots.jl]
-    C --> D[CmdStan.jl]
-    D --> E[CmdStan]
+    A[cmdstan] --> B[Julia]
+    B --> C[Configuring Julia]
+    C --> D[Gotchas]
+    D --> E[]
     E --> F[Stan]
     F --> G[Bayesian Analyses]
 
 ```
 
+## CmdStan installation
 
+1.  [Get Started](https://mc-stan.org/docs/cmdstan-guide/installation.html)
+2. Recommended - install via conda 
 
 
 
