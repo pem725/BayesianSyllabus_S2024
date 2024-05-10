@@ -1,7 +1,6 @@
 ---
 title: "Plots Demo"
-execute:
-  enabled: true
+engine: julia
 ---
 
 ## Parametric Plots
@@ -13,6 +12,7 @@ See @fig-parametric for an example.
 #| label: fig-parametric
 #| fig-cap: "Parametric Plots"
 
+import Pkg; Pkg.add("Plots")
 using Plots
 
 plot(sin, 
@@ -26,6 +26,8 @@ plot(sin,
 
 ```{julia}
 CMDSTAN = homedir() * "/GitTemp/cmdstan/"
+
+import Pkg; Pkg.add("Stan")
 
 using Stan
 
@@ -59,7 +61,6 @@ if success(rc)
   chn = read_samples(sm, :mcmcchains)
   chn |> display
 end
-
 
 #fit = stan(model, data = data, iter = 1000, chains = 1)
 ```

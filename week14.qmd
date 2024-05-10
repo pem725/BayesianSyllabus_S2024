@@ -90,6 +90,7 @@ binorm_model = "
   model {
         y ~ multi_normal(mu, Sigma);
   }
+  
 "
 
 sm = SampleModel("binormal", binorm_model);
